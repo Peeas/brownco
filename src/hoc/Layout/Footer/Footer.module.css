@@ -1,0 +1,12 @@
+.Footer {
+    min-height: 159px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.Footer footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
