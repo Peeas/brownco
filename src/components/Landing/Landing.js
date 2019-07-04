@@ -26,6 +26,9 @@ const Landing = () => {
                     <p>As a self-performing contractor, our trades are in-house, so we offer competitive rates, greater control and an uncompromising commitment to quality and service. </p>
                 </div>
             </section>
+            <section className={classes.Concrete}>
+
+            </section>
         </Fragment>
     )
 }
