@@ -1,12 +1,105 @@
 .Footer {
-    min-height: 159px;
+    height: 479px;
+    background-color: black;
     left: 0;
     bottom: 0;
     width: 100%;
     overflow: hidden;
+    color: white;
+
 }
+
+.CoTitle {
+    height: 12px;
+    width: 174px;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    line-height: 12px;
+}
+
 .Footer footer {
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.FooterLinkContainer {
+    margin-top: 20px;
+    margin-left: 23px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
+}
+
+.FooterCopy {
+    color: #FFFFFF;
+    height: 9px;
+    opacity: 0.54;
+    font-family: Rubik;
+    font-size: 8px;
+    letter-spacing: 2px;
+    line-height: 9px;
+    text-align: center;
+    padding-bottom: 48px;
+
+}
+
+.ServiceResourceContainer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+}
+
+.CoAddy {
+    height: 63px;
+    width: 99px;
+    opacity: 0.54;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    line-height: 21px;
+}
+
+.ServiceContainer p {
+    height: 105px;
+    width: 113px;
+    opacity: 0.54;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    line-height: 21px;
+}
+
+.ResourceContainer p {
+    height: 105px;
+    width: 43px;
+    opacity: 0.54;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    line-height: 21px;
+}
+
+h5 {
+    height: 18px;
+    width: 66px;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 18px;
+}
+@media(min-width: 500px) {
+    .Footer {
+        height: 276px;
+    }
+    .ServiceResourceContainer, .FooterLinkContainer {
+        flex-direction: row;
+    }
+    .FooterLinkContainer {
+        margin-top: 48px;
+    }
 }

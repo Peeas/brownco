@@ -1,24 +1,39 @@
 .Top {
-    background-color: rgba(255,69,4,0.75); 
-        /* url('../../assets/images/background01.svg') */
-
+    /* background: url('../../assets/images/Index@3x.jpg'); */
+    /* 
     background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     display: flex;
-
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100vw;
     height: 756px;
-    
+
     /* display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     align-content: center; */
 }
+
+.heroImageContainer {
+    display: flex;
+
+}
+
+.HeroImage {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .HomepageHero {
+    margin-top: 50Vh;
     text-align: center;
     width: 100vw;
     height: 100%;
@@ -26,37 +41,245 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .HeroContentTitle {
-    color: rgba(255,255,255,0.87);
-    font-family: Rubik;	font-size: 60px;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: Rubik;
+    font-size: 60px;
     font-style: normal;
     font-weight: 300;
     line-height: 71px;
     text-align: center;
 
 }
-.LandingHeroPanel{
+
+.HeroContentText {
+    height: 24px;
+    opacity: 0.87;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 24px;
+    text-align: center;
+}
+.LandingFooterPanel {
+    height: 298px;
+}
+.LandingHeroPanel {
     height: 254px;
+
+}
+.LandingHeroPanel,
+.LandingFooterPanel {
     width: 100vw;
     background-color: #EAEAEA;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.LandingHeroPanelCopy {
+
+.LandingHeroPanelCopy,
+.LandingFooterPanelCopy {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
 
 }
-.LandingHeroPanelCopy p {
+
+.LandingHeroPanelCopy p,
+.LandingFooterPanelCopy p {
     max-width: 512px;
     opacity: 0.54;
     font-size: 16px;
     line-height: 28px;
     margin: 0 auto;
 }
+
 .Concrete {
-    height: 500px;
+    height: 465px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.LandingFooterPanel h1 {
+    height: 33px;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 28px;
+    letter-spacing: 2.63px;
+    line-height: 33px;
+    text-align: center;
+}
+
+.ConcreteCopyContainer {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+}
+
+.SectionImgContainer,
+.Section2ImgContainer {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+}
+
+.Section2ImgContainer img {
+    object-fit: cover;
+    width: 100%;
+    order: 1;
+}
+
+.SectionImgContainer img {
+    object-fit: cover;
+    width: 100%;
+    order: 1;
+}
+
+.Section2CopyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    order: 1
+}
+
+.ConcreteCopyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    order: 2
+}
+
+.Section2CopyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    order: 2
+}
+
+.Orangebar {
+    height: 4px;
+    width: 40px;
+    background-color: #F86800;
+}
+
+.SectionHeader {
+    height: 50px;
+    width: 183px;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 1.75px;
+    line-height: 25px;
+    margin: 10px 0;
+}
+
+.ConcreteCopy {
+    width: 320px;
+    opacity: 0.54;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.LearnMore {
+    height: 14px;
+    width: 86px;
+    color: #FF4504;
+    font-family: Rubik;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 14px;
+    margin-top: 20px;
+}
+
+@media(min-width: 700px) {
+
+    .Concrete {
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .ConcreteCopyContainer {
+        order: 1;
+        width: 50%;
+        display: flex;
+        height: 100%;
+
+    }
+
+    .SectionImgContainer {
+        order: 2;
+        width: 50%;
+        display: flex;
+        height: 100%;
+    }
+
+    .Section2ImgContainer {
+        order: 1;
+        width: 50%;
+        display: flex;
+        height: 100%;
+    }
+
+    .Section2CopyContainer {
+        order: 2;
+        width: 50%;
+        display: flex;
+        height: 100%;
+    }
+
+    .LearnMore {
+        margin-top: 40px;
+    }
+
+    .SectionHeader {
+        margin: 30px 0;
+    }
+
+}
+button {
+    margin: 40px auto;
+    background-color: #FF4504;
+    border: 1px solid #FF4504;
+    border-radius: 5px;
+    display: inline-flex;
+    font-style: normal;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    padding: 15px 20px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    width: 199px; 
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+
+    /* identical to box height */
+}
+@media(max-width: 699px) {
+    .MobilePadding {
+        margin: 20px;
+    }
 }
