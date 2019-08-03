@@ -1,0 +1,33 @@
+.LandingFooterPanel {
+    height: 298px;
+}
+.LandingHeroPanel {
+    height: 254px;
+
+}
+.LandingHeroPanel,
+.LandingFooterPanel {
+    width: 100vw;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LandingHeroPanelCopy,
+.LandingFooterPanelCopy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.LandingHeroPanelCopy p,
+.LandingFooterPanelCopy p {
+    max-width: 350px;
+    opacity: 0.54;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 auto;
+}

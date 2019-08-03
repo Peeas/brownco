@@ -7,7 +7,7 @@ const navigationItems = () => (
     <ul className={classes.NavigationItems}>
         <NavigationItem link="/" active>What we do</NavigationItem>
         <NavigationItem link="/">industries</NavigationItem>
-        <NavigationItem link="/">about us</NavigationItem>
+        <NavigationItem link="/aboutus">about us</NavigationItem>
         <NavigationItem link="/">careers</NavigationItem>
         <NavigationItem link="/">contact</NavigationItem>
     </ul>

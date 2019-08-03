@@ -6,22 +6,29 @@ import WindEnergy from '../../assets/images/WindEnergy.jpg';
 import TenantImprovement from '../../assets/images/BackgroundImage.png';
 import { Parallax, Background } from 'react-parallax';
 import StructuralSteel from '../../assets/images/Rectangl6.png';
-import BackgroundImage from '../../assets/images/Index@3x.jpg'
+import BackgroundImage from '../../assets/images/Index@3x.jpg';
+import useWindowDimensions from '../../utils/useWindowDimensions';
+import smallBackground from '../../assets/images/Index.jpg';
+import ContactUs from '../ContactUs/ContactUs';
 const Landing = () => {
+    const { width, height } = useWindowDimensions();
+    console.log('width', width);
+    console.log('height', height)
+    let heroBuilding = width > 500 ? BackgroundImage : smallBackground;
     return (
         <Fragment>
             <section>
                 <div className={classes.Top}>
 
-                    <Parallax strength={500}>
+                    <Parallax strength={600}>
                         <Background  className={classes.heroImageContainer}>
-                            <img className={classes.HeroImage} src={BackgroundImage} />
+                            <img className={classes.HeroImage} src={heroBuilding} alt=""/>
                         </Background>
                         <div className={classes.HomepageHero}>
                             <div className={classes.HeroContentText}>
-                            Brownco Construction Company Inc.
+                                Brownco Construction Company Inc.
                             </div>
-                            <div className={classes.HeroContentTitle}>Building With Purpose </div>
+                            <div className={classes.HeroContentTitle}>Building With Purpose</div>
 
                             <div className={classes.HeroButton}>
 
@@ -132,13 +139,7 @@ const Landing = () => {
 
             </section>
 
-            <section className={classes.LandingFooterPanel}>
-                <div className={classes.LandingFooterPanelCopy}>
-                    <h1>Contact Us</h1>
-                    <p>We invite you to contact us with any requests or questions you may have. </p>
-                    <button>Contact</button>
-                </div>
-            </section>
+            <ContactUs></ContactUs>
             
         </Fragment>
     )

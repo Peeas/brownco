@@ -3,6 +3,8 @@ import classes from './Layout.module.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Footer from './Footer/Footer';
+import { withRouter } from "react-router";
+
 class Layout extends Component {
 
     state = {
@@ -29,11 +31,12 @@ class Layout extends Component {
                     closed={this.sideDrawerClosedHandler} />
                 <main className={classes.Content}>
                     {this.props.children}
+                    <Footer></Footer>
                 </main>
-                <Footer></Footer>
+
             </Fragment>
         )
     }
 };
 
-export default Layout;
+export default withRouter(Layout);
