@@ -1,0 +1,82 @@
+.ContactUsContainer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.ContactUsForm {
+    padding-top: 150px;
+    max-width: 700px;
+    margin: 0 auto;
+
+
+}
+
+.ContactTitle {
+    opacity: 0.87;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 32px;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.ContactSub {
+    opacity: 0.54;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 24px;
+}
+.FormContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.textField {
+    margin-right: 24px !important;
+    width: 300px;
+}
+.FormRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.longField {
+    width: 624px;
+}
+.multilineField {
+    width: 624px;
+}
+.BtnRow  {
+    width: 624px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.BtnRow button {
+    margin: 24px 0 !important;
+    max-height: 57px;
+}
+
+@media(max-width: 700px) {
+    .multilineField {
+        max-width: 300px;
+    }
+    .longField {
+        max-width: 300px;
+    }
+    .ContactUsForm {
+        padding-top: 100px;
+        padding-left: 24px;
+    }
+    .BtnRow  {
+        width: 300px;
+
+    }
+    .FormContainer {
+        padding-bottom: 24px;
+        max-width: 350px;
+    }
+}

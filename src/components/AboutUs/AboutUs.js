@@ -4,6 +4,7 @@ import { Parallax, Background } from 'react-parallax';
 import AboutUsImage from '../../assets/images/Hero@2x.png';
 import useWindowDimensions from '../../utils/useWindowDimensions';
 import ContactUs from '../ContactUs/ContactUs';
+import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 
 const imgStyle = {
     backgroundSize: 'cover',
@@ -65,11 +66,16 @@ const AboutUs = () => {
                         <p>Certified Wind Turbine Installere</p>
 
                     </div>
+                    <div className={classes.FootImgContainer}>
+                        <img src={AboutUsFootImg} alt="about-us"/>
+                    </div>
 
                     <div className={classes.SafetyPolicy}>
                         
                         <h3>Brownco Construction Company Safety Policy</h3>
+
                         <div className={classes.SafetyColumns}>
+
                             <div>
                                 The Right People, with the Right Attitude! <br/>
                                 Clean Trucks. Inside and Out. <br/>
@@ -82,6 +88,7 @@ const AboutUs = () => {
                                 Being Proactive, not Reactive.<br/>
                                 Showing up to the Jobsite Early. 
                             </div>
+
                             <div>
                                 Having a Positive (Safety) Attitude. <br/>
                                 Paying Attention to Detail. <br/>
@@ -93,13 +100,16 @@ const AboutUs = () => {
                                 Owning up to Ones Mistakes. <br/>
                                 Attending Safety Meetings. <br/>
                             </div>
+
                         </div>
+                        
                     </div>
                     
                     </div>
                 </section>
-  
-                <ContactUs></ContactUs>
+                    <div>
+                        <ContactUs></ContactUs>
+                    </div>
         </Fragment>
     )
 }

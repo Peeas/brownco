@@ -11,18 +11,16 @@ const imgStyle = {
 class ParallaxHero extends Component {
     render() {
         return (
-            <section className={classes.Top}>
                 <Parallax strength={600}>
                     <Background className={classes.heroImageContainer}>
                         <img style={imgStyle} src={this.props.paraIimg} alt="hero" />
                     </Background>
                     <div className={classes.HomepageHero}>
                         <div className={classes.HeroContentTitle}>
-                            About Us
+                            {this.props.heroText}
                         </div>
                     </div>
                 </Parallax>
-            </section>
         )
     }
 }
