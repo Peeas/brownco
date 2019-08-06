@@ -5,9 +5,8 @@ import useWindowDimensions from '../../utils/useWindowDimensions';
 import smallBackground from '../../assets/images/Index.jpg';
 import { Parallax, Background } from 'react-parallax';
 import ContactUs from '../ContactUs/ContactUs';
-import budget from '../../assets/images/Budget.webp';
-import analysisimg from '../../assets/images/Analysis@2x.svg';
-import certImg from '../../assets/images/Certification@2x.svg';
+import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
+
 const imgStyle = {
     backgroundSize: 'cover',
     backgroundRepeat: 'repeat',
@@ -15,7 +14,6 @@ const imgStyle = {
 }
 const WhatWeDo = () => {
     const { width } = useWindowDimensions();
-    console.log(width)
     let heroBuilding = width > 500 ? BackgroundImage : smallBackground;
 
     return (
@@ -67,40 +65,7 @@ and within budget.
                         </div>
                     </div>
 
-                    <div className={classes.DesignConstruction}>
-                        <div>
-                            <div className={classes.DesignTitle}>
-                                Much More than Design and Construction
-                            </div>
-                            <div className={classes.DesignRowContainer}>
-                                <div className={classes.DesignRow}> 
-                                    <div className={classes.DesignRowImg}>
-                                        <img src={analysisimg} alt="performance-analyses"/>
-                                    </div>
-                                    <div className={classes.DesignRowCopy}>
-                                        We will perform feasability and performance analyses to guide decision makers.
-                                    </div>
-                                </div>
-                                <div className={classes.DesignRow}>
-                                    <div className={classes.DesignRowImg}>
-                                        <img src={certImg} alt="certification-validation"/>
-                                    </div>
-                                    <div className={classes.DesignRowCopy}>
-                                        We handle permitting and design through certification and validation.
-                                    </div>
-                                </div>
-                                <div className={classes.DesignRow}>
-                                    <div className={classes.DesignRowImg}>
-                                        <img src={budget} alt="generate-budget"/>
-                                    </div>
-                                    <div className={classes.DesignRowCopy}>
-                                        Our experts will generate budget numbers to aid in appropriating funds for your project.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <MoreThanDesign />
 
                     <div>
                         <ContactUs />

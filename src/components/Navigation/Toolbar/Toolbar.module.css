@@ -26,6 +26,7 @@
 }
 .Logo {
     height: 80%;
+    cursor: pointer;
 }
 @media (max-width: 949px) {
     .Toolbar {

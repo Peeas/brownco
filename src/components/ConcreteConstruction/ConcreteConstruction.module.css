@@ -1,0 +1,109 @@
+.WhatWeDoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.Top {
+    display: flex;
+    top: 0;
+    left: 0;
+
+}
+
+.HomepageHero {
+    margin-top: 4vh;
+    text-align: center;
+    width: 100vw;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeroContentTitle {
+    height: 71px;
+    color: rgba(255, 255, 255, 0.87);
+    font-family: Rubik;
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.titleContainer {
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleContainer div {
+    max-width: 618px;
+    opacity: 0.54;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.SolutionsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 295px;
+    background-color: #EAEAEA;
+}
+
+.SolutionsContainer div {
+    margin: 0 auto;
+}
+
+.SolutionsContainer .StructuralSub {
+    height: 17px;
+    opacity: 0.87;
+    margin: 20px;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.SolutionsColumns {
+    display: flex;
+    flex-direction: row;
+}
+
+.SolutionsColumns div {
+    height: 120px;
+    width: 220px;
+    opacity: 0.54;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+
+@media(max-width: 700px) {
+    .SolutionsColumns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SolutionsContainer {
+        height: 600px;
+    }
+
+    .titleContainer {
+        height: 300px;
+        padding: 15px;
+    }
+
+}
+@media(min-width: 699px) {
+    .DesignTitle {
+        width: 549px;
+    }
+}

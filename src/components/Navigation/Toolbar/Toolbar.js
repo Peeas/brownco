@@ -3,18 +3,26 @@ import classes from './Toolbar.module.css'
 import NavigationItems from '../NavigationItems/NavigationItems';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import logo from '../../../assets/images/Primary@1.5x.svg';
+import { withRouter } from 'react-router-dom';
 
-const toolbar = (props) => (
-    <header className={classes.Toolbar} id="navbar">
-        <DrawerToggle clicked={props.drawerToggleClicked} />
+const toolbar = (props) => {
+    const onLogoClick = () => {
+        if (props.location.pathname !== "/") {
+            props.history.push('/');
+        }
+    }
+    return (
+        <header className={classes.Toolbar} id="navbar">
+            <DrawerToggle clicked={props.drawerToggleClicked} />
+            <div className={classes.Logo} onClick={onLogoClick}>
+                <img src={logo} alt="logo"/>
+            </div>
+            <nav className={classes.DesktopOnly}>
+                <NavigationItems />
+            </nav>
+        </header>
+    )
+}
 
-        <div className={classes.Logo}>
-            <img src={logo} alt=""/>
-        </div>
-        <nav className={classes.DesktopOnly}>
-            <NavigationItems />
-        </nav>
-    </header>
-)
 
-export default toolbar;
+export default withRouter(toolbar);

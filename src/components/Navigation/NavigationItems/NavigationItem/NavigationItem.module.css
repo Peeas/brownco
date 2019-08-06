@@ -12,6 +12,7 @@
 	line-height: 13px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .NavigationItem a {
@@ -19,3 +20,5 @@
     text-transform: uppercase;
 
 }
+.NavigationItem a:visited { text-decoration: none; color: rgba(0,0,0,0.87);}
+.NavigationItem a:hover, a:active { text-decoration: none; color: rgba(0,0,0,0.87);}

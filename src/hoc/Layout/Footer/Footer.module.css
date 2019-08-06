@@ -63,8 +63,9 @@
     line-height: 21px;
 }
 
-.ServiceContainer p {
+.ServiceContainer div {
     height: 105px;
+    margin-right: 5px;
     width: 113px;
     opacity: 0.54;
     color: #FFFFFF;
@@ -73,9 +74,10 @@
     line-height: 21px;
 }
 
-.ResourceContainer p {
+.ResourceContainer div {
+    display: flex;
+    flex-direction: column;
     height: 105px;
-    width: 43px;
     opacity: 0.54;
     color: #FFFFFF;
     font-family: Rubik;
@@ -91,6 +93,16 @@ h5 {
     font-size: 10px;
     letter-spacing: 1px;
     line-height: 18px;
+}
+.SubLink {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 10px;
+    line-height: 21px;
+    cursor: pointer;
+    width: 45px;
+
 }
 @media(min-width: 500px) {
     .Footer {

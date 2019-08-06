@@ -2,7 +2,6 @@ import React, {Fragment} from 'react';
 import classes from './AboutUs.module.css';
 import { Parallax, Background } from 'react-parallax';
 import AboutUsImage from '../../assets/images/Hero@2x.png';
-import useWindowDimensions from '../../utils/useWindowDimensions';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 
@@ -12,9 +11,7 @@ const imgStyle = {
     marginTop: '260px'
 }
 const AboutUs = () => {
-    const { width, height } = useWindowDimensions();
-    console.log('width', width);
-    console.log('height', height)
+
     return (
         <Fragment>
                 <section className={classes.Top}>

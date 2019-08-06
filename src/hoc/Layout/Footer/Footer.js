@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Footer.module.css';
+import { withRouter, NavLink } from 'react-router-dom';
 const footer = () => {
   return (
     <div className={classes.Footer}>
@@ -14,21 +15,23 @@ const footer = () => {
           <div  className={classes.ServiceResourceContainer}>
             <div className={classes.ServiceContainer}>
               <h5>SERVICES</h5>
-              <p>Concrete
-                Structural Steel
-                Demolition + Excavation
-                Tenant Improvement
-                Renewable Resources</p>
+              <div>
+                <NavLink className={classes.SubLink} to={'/concrete-construction'}>Concrete</NavLink> <br/>
+                <NavLink className={classes.SubLink} to={'/structural-steel'}>Structural Steel</NavLink><br/>
+                <NavLink className={classes.SubLink} to={'/demolition-excavation'}>Demolition + Excavation</NavLink><br/>
+                <NavLink className={classes.SubLink} to={'/tenant-improvement'}>Tenant Improvement</NavLink><br/>
+                <NavLink className={classes.SubLink} to={'/renewable-resources'}>Renewable Resources</NavLink>
+
+              </div>
+          
             </div>
             <div className={classes.ResourceContainer}>
             <h5>RESOURCES</h5>
-              <p>
-              About Us
-              Careers
-              Contact
-              Terms
-              Privacy
-              </p>
+              <div>
+                <NavLink className={classes.SubLink} to={'/aboutus'}>About Us</NavLink>
+                <NavLink className={classes.SubLink} to={'/'}>Careers</NavLink>
+                <NavLink className={classes.SubLink} to={'/contactus'}>Contact</NavLink>
+              </div>
             </div>
           </div>
         </div>
@@ -40,4 +43,4 @@ const footer = () => {
   )
 }
 
-export default footer;
+export default withRouter(footer);
