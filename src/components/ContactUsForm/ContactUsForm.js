@@ -1,94 +1,157 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classes from './ContactUsForm.module.css';
 import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import FilledInput from '@material-ui/core/FilledInput';
 
+class ContactUsForm extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            contactForm: {
+                firstName: '',
+                lastName: '',
+                companyName: '',
+                email: '',
+                phone: '',
+                service: '',
+                comment: ''
+            },
 
-const ContactUsForm = () => {
-
-    const handleChange = name => event => {
-        console.log('name', name)
-        console.log('event', event)
-
+            
+        }
+    }
+    
+    handleChange = (event) => {
+        const updatedContactForm = {
+            ...this.state.contactForm
+        }
+        updatedContactForm[event.target.name] = event.target.value;
+        this.setState({
+            contactForm: updatedContactForm
+        });
     };
-    return (
-        <div className={classes.ContactUsContainer}>
-            <div className={classes.ContactUsForm}>
-                <div className={classes.ContactTitle}>
-                    Contact Us
-                </div>
-                <div className={classes.ContactSub}>
-                Please fill out the form below, and we will respond promptly! 
-                </div>
-                <div>
-                <form className={classes.FormContainer} noValidate autoComplete="off">
-                    <div className={classes.FormRow}>
-                        <TextField
-                            id="filled-firstName"
-                            label="First Name"
-                            className={classes.textField}
-                            onChange={handleChange('firstName')}
-                            margin="normal"
-                            variant="filled"
-                        />
-                        <TextField
-                            id="filled-lastName"
-                            label="Last Name"
-                            className={classes.textField}
-                            onChange={handleChange('Last Name')}
-                            margin="normal"
-                            variant="filled"
-                        />
-                    </div>
-                    <div className={classes.FormRow}>
 
-                        <TextField
-                            id="filled-lastName"
-                            label="Company Name"
-                            className={classes.longField}
-                            onChange={handleChange('Company Name')}
-                            margin="normal"
-                            variant="filled"
-                        />
+    render () {
+        return (
+            <div className={classes.ContactUsContainer}>
+                <div className={classes.ContactUsForm}>
+                    <div className={classes.ContactTitle}>
+                        Contact Us
                     </div>
-                    <div className={classes.FormRow}>
-                        <TextField
-                            id="filled-email"
-                            label="Email"
-                            className={classes.textField}
-                            onChange={handleChange('email')}
-                            margin="normal"
-                            variant="filled"
-                        />
-                        <TextField
-                            id="filled-phone"
-                            label="Phone"
-                            className={classes.textField}
-                            onChange={handleChange('phone')}
-                            margin="normal"
-                            variant="filled"
-                        />
+                    <div className={classes.ContactSub}>
+                    Please fill out the form below, and we will respond promptly! 
                     </div>
-                    <div className={classes.FormRow}>
-                        <TextField
-                            id="filled-email"
-                            label="Your message, request or comment"
-                            className={classes.multilineField}
-                            onChange={handleChange('email')}
-                            margin="normal"
-                            variant="filled"
-                            multiline
-                            rows="6"
-                        />
+                    <div>
+                    <form method="POST" data-netlify="true" name="contact" className={classes.FormContainer} autoComplete="off">
+                        <div className={classes.FormRow}>
+                            <TextField
+                                id="firstName"
+                                name="firstName"
+                                label="First Name"
+                                value={this.state.contactForm.firstName}
+                                className={classes.textField}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                            />
+                            <TextField
+                                id="lastName"
+                                name="lastName"
+                                label="Last Name"
+                                value={this.state.contactForm.lastName}
+                                className={classes.textField}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                            />
+                        </div>
+                        <div className={classes.FormRow}>
+    
+                            <TextField
+                                id="CompanyName"
+                                name="companyName"
+                                label="Company Name"
+                                value={this.state.contactForm.companyName}
+                                className={classes.longField}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                            />
+                        </div>
 
+                        <div className={classes.FormRow}>
+                            <TextField
+                                id="email"
+                                name="email"
+                                label="Email"
+                                required
+                                type="email"
+                                value={this.state.contactForm.email}
+                                className={classes.textField}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                            />
+                            <TextField
+                                id="phone"
+                                name="phone"
+                                label="Phone"
+                                type="phone"
+                                className={classes.textField}
+                                value={this.state.contactForm.phone}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                            />
+                        </div>
+
+                        <div className={classes.FormRow}>
+                            <FormControl variant="filled" className={classes.longField}>
+                                <InputLabel htmlFor="service">What service can we help you with?</InputLabel>
+                                <Select
+                                    value={this.state.contactForm.service}
+                                    name="service"
+                                    onChange={(event) => this.handleChange(event) }
+                                    input={<FilledInput name="service" id="service" />}
+                                    >
+                                        <MenuItem value={'structural steel'}>Structural Steel</MenuItem>
+                                        <MenuItem value={'concrete construction'}>Concrete Construction</MenuItem>
+                                        <MenuItem value={'demolition excavation'}>Demolition Excavation</MenuItem>
+                                        <MenuItem value={'renewable resources'}>Renewable Resources</MenuItem>
+                                        <MenuItem value={'tenant improvement'}>Tenant Improvement</MenuItem>
+                                        <MenuItem value={'other'}>Other</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        
+                        <div className={classes.FormRow}>
+                            <TextField
+                                id="comment"
+                                name="comment"
+                                value={this.state.contactForm.comment}
+                                label="Your message, request or comment"
+                                className={classes.multilineField}
+                                onChange={(event)=> this.handleChange(event)}
+                                margin="normal"
+                                variant="filled"
+                                multiline
+                                rows="6"
+                            />
+    
+                        </div>
+                        <div className={classes.BtnRow}>
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
                     </div>
-                    <div className={classes.BtnRow}>
-                        <button>Send</button>
-                    </div>
-                </form>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
     
 }
 export default ContactUsForm;
