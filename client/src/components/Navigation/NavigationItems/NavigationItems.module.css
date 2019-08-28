@@ -1,0 +1,42 @@
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+}
+@media (min-width: 950px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
+}
+.Logout {
+    margin: 0;
+    background-color: #FF4504;
+    border: 1px solid #FF4504;
+    border-radius: 5px;
+    display: inline-flex;
+    font-style: normal;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    padding: 10px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    width: 100px; 
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+
+    /* identical to box height */
+}

@@ -1,0 +1,20 @@
+.AuthContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+.textField {
+    width: 300px;
+}
+.ActionRow  {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+@media (max-width: 500px) {
+    .textField {
+        width: 200px;
+    }
+}

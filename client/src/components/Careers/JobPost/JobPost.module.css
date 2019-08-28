@@ -1,0 +1,52 @@
+.JobTitle {
+    height: 28px;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.ResponsibilitiesTitle,
+.RequirementTitle {
+    color: #000000;
+    font-family: Rubik;
+    font-size: 16px;
+    line-height: 28px;
+    margin-top: 25px;
+}
+
+.Responsibilities,
+.Requirement {
+    opacity: 0.54;
+    color: #000000;
+    font-family: Rubik;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.SubmitResume {
+    height: 28px;
+    width: 129px;
+    color: #F86800;
+    font-family: Rubik;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 28px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.Bar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+	box-sizing: border-box;
+	height: 1px;
+	width: 454px;
+	border: 1px solid #979797;
+}
+@media(max-width: 500px) {
+    .Bar{
+        width: 250px;
+    }
+}

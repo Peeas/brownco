@@ -1,0 +1,51 @@
+
+
+.DialogContent {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    justify-content: center;
+}
+
+.MuiDialogTitle-root-99 {
+    padding: 0px !important;
+}
+
+@media (min-width: 500px) {
+    .DialogContent {
+        padding-top: 0px;
+        min-width: 350px;
+    }
+
+}
+@media (max-width: 500px) {
+    .MuiDialog-paper   {
+        margin: 0px !important;
+    }
+}
+.notificationButton {
+    margin: 0px auto;
+    background-color: #FF4504;
+    border: 1px solid #FF4504;
+    border-radius: 5px;
+    display: inline-flex;
+    font-style: normal;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    padding: 15px 20px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    width: 199px; 
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+
+    /* identical to box height */
+}
