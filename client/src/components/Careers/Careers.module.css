@@ -14,9 +14,9 @@
 .JobpostContainer, .Spinner, .AddPostBtn {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+
+    
+    margin: 0 auto;
 }
 .JobpostContainer, .Spinner {
 
@@ -30,3 +30,19 @@
     font-weight: 300;
     line-height: 57px;
 }
+.Title {
+    color: #000000;
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+@media(min-width: 600px) {
+    .JobpostContainer {
+        width: 600px;
+
+    }
+}
+

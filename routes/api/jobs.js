@@ -11,9 +11,15 @@ const {
 
 router.get('/', jobsController.getJobs);
 
+router.post('/resume', jobsController.postResume);
+
+
 router.post('/', [isAuth, [
   check('title', 'Title is required').not().isEmpty(),
   check('responsibilities').not().isEmpty()
 ]] , jobsController.postJob);
+
+router.delete('/:id', isAuth, jobsController.deleteJob)
+router.put('/:id', isAuth, jobsController.editJob)
 
 module.exports = router;

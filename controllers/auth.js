@@ -55,7 +55,7 @@ exports.postRegister = async (req, res, next) => {
 
         jwt.sign(
             payload,
-            config.get('jwtSecret'),
+            process.env.JWTSECRECT,
             { expiresIn: 360000 },
             (err, token) => {
                 if (err) throw err;
@@ -103,7 +103,7 @@ exports.postLogin = async (req, res, next) => {
 
         jwt.sign(
             payload,
-            config.get('jwtSecret'),
+            process.env.JWTSECRECT,
             { expiresIn: 360000 },
             (err, token) => {
                 if (err) throw err;

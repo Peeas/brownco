@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://browncouser:PD0A5mcT55QQV3n5@browncodev-nci9u.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret": "browncotoken"
-}

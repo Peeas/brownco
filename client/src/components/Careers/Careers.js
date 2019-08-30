@@ -20,9 +20,6 @@ class Careers extends Component {
     static contextType = AuthContext;
 
     componentDidMount() {
-        const token = localStorage.getItem('token');
-
-        console.log(this.context.authenticated)
         this.getJobs();
     }
 
@@ -39,11 +36,9 @@ class Careers extends Component {
                 'Content-Type': 'application/json'
             }
          }).then((res) => {
-            console.log('res', res.data[0]);
             let data = res.data
             let jobs = [];
             data.forEach(job => jobs.push(job));
-            console.log(jobs)
             this.setState({
                 loading: false,
                 jobs: jobs
@@ -62,12 +57,25 @@ class Careers extends Component {
             showPost: !this.state.showPost
         })
     }
+    handleNewJob = (job) => {
+        const oldJobs = this.state.jobs;
+        let newJobs = oldJobs.unshift(job);
+        this.setState({
+            jobs: newJobs
+        })
+        this.toggleClose();
+    }
+    handleRemove = (id) => {
+        let jobs = this.state.jobs;
+        let toDelete = jobs.filter((el) => el.id === id)
+        let newJobs = jobs.slice(jobs.indexOf(toDelete), 1);
+        this.setState({
+            jobs: newJobs
+        })
+    }
     render() {
         let posts;
         let jobs = this.state.jobs;
-        console.log('JOBS', jobs)
-        
-
         if (this.state.loading) {
             posts = (
             <div className={classes.Spinner}>
@@ -83,14 +91,17 @@ class Careers extends Component {
                     { jobs.map((job, i) => {
                         let title = job.title;
                         let requirements = job.requirements;
-                        let responsibilities = job.responsibilities
-                        console.log(title)
+                        let responsibilities = job.responsibilities;
+                        let id = job._id;
                         return (
-                            <div key={i}>
+                            <div className={classes.PostContainer} key={i}>
                                 <JobPost
+                                    job={job}
+                                    id={id}
                                     title={title}
                                     requirements={requirements}
-                                    responsibilities={responsibilities} />
+                                    responsibilities={responsibilities}
+                                    onRemove={(id) => this.handleRemove(id)}/>
                             </div>
                         )
                     })
@@ -101,7 +112,9 @@ class Careers extends Component {
         } else {
             posts = (
                 <div className={classes.JobpostContainer}>
-                    No current openeings
+                    <div className={classes.Title}>
+                        No current openeings
+                    </div>
                 </div>
             )
         }
@@ -109,15 +122,16 @@ class Careers extends Component {
             <Fragment>
                 <ResponsiveDialog
                     isOpen={this.state.showPost === true}
-                    onClose={this.toggleClose}>
-                        <NewJobPost />
+                    onClose={this.toggleClose}
+                    >
+                        <NewJobPost addJob={this.handleNewJob} toggleClose={this.toggleClose} />
                 </ResponsiveDialog>
 
                 <div className={classes.CareersContainer}>
                     <div className={classes.CareersHero}>
                             <div className={classes.CareersTitle}>Available Positions</div>
                     </div>
-                    {posts}
+                        {posts}                    
                     <div className={classes.AddPostBtn} >
                         {this.context.authenticated ? <Button onClick={this.toggleClose}variant="contained" color="primary" >
                         Add Job Post

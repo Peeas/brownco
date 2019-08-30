@@ -5,7 +5,17 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import classes from './ResponsiveDialog.module.css';
 import AuthContext from '../../../context/auth-context';
-
+import Button from '@material-ui/core/Button';
+import { ThemeProvider } from '@material-ui/styles';
+import { red } from '@material-ui/core/colors';
+import { createMuiTheme, withStyles, makeStyles } from '@material-ui/core/styles';
+const theme = createMuiTheme({
+    palette: {
+      secondary: red,
+    },
+  });
+  
+  
 class ResponsiveDialog extends Component {
     state = {
         open: this.props.isOpen,
@@ -47,6 +57,16 @@ class ResponsiveDialog extends Component {
                                 </button>
                                 : ''
                             }
+                            {this.props.isDeleteJob ?
+                                <ThemeProvider theme={theme}>
+                                    <div className={classes.JobDelete}>
+                                    <Button onClick={() => this.props.onClose(false)} variant="contained">Cancel</Button>
+                                    <Button onClick={() => this.props.onClose(true)} variant="contained" color="secondary">
+                                        Delete
+                                    </Button>
+                                    </div>
+                                </ThemeProvider>
+                            : ''}
                         </div>
 
                     </DialogContent>

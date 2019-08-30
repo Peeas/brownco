@@ -21,10 +21,13 @@ class App extends Component {
   state = {
     authenticated: false
   }
-
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.setState({ authenticated: true })
+    }
+  }
   loginHandler = async (user) => {
-    console.log('user', user)
-
         try {
             const config = {
                 headers: {
@@ -45,7 +48,6 @@ class App extends Component {
   }
 
   logoutHandler = () => {
-    console.log('am i here')
     localStorage.removeItem('token');
     this.setState({
       authenticated: false

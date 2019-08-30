@@ -42,11 +42,35 @@
     margin-bottom: 50px;
 	box-sizing: border-box;
 	height: 1px;
-	width: 454px;
 	border: 1px solid #979797;
 }
 @media(max-width: 500px) {
     .Bar{
         width: 250px;
     }
+}
+.PostContainer{
+    width: 100%;
+    justify-content: start;
+}
+.ResumeUpload {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+.ResumeRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+.TitleRow {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+.MessagePadding {
+    margin: 40px
 }
