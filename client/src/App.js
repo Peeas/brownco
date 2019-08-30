@@ -15,7 +15,6 @@ import RenewableResources from './components/RenewableResources/RenewableResourc
 import Careers from './components/Careers/Careers';
 import AuthContext from '../src/context/auth-context';
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:5000";
 
 class App extends Component {
   state = {

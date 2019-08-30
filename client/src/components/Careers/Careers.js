@@ -9,7 +9,6 @@ import JobPost from './JobPost/JobPost';
 import NewJobPost from './NewJobPost/NewJobPost';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 
-axios.defaults.baseURL = "http://localhost:5000";
 
 class Careers extends Component {
     state = {

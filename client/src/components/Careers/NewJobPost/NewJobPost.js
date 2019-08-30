@@ -3,7 +3,6 @@ import classes from './NewJobPost.module.css';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
-axios.defaults.baseURL = "http://localhost:5000";
 
 class NewJobPost extends Component {
     state = {

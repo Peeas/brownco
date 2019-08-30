@@ -8,7 +8,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FilledInput from '@material-ui/core/FilledInput';
 import axios from 'axios';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
-axios.defaults.baseURL = "http://localhost:5000";
 
 class ContactUsForm extends Component {
     constructor(props) {

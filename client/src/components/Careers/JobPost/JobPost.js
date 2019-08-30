@@ -9,7 +9,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ResponsiveDialog from '../../UI/ResponsiveDialog/ResponsiveDialog';
 import NewJobPost from '../NewJobPost/NewJobPost';
-axios.defaults.baseURL = "http://localhost:5000";
 
 class JobPost extends Component {
     state = {
