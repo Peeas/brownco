@@ -55,7 +55,7 @@ exports.postRegister = async (req, res, next) => {
 
         jwt.sign(
             payload,
-            process.env.JWTSECRECT,
+            config.get('jwtSecret'),
             { expiresIn: 360000 },
             (err, token) => {
                 if (err) throw err;
@@ -103,7 +103,7 @@ exports.postLogin = async (req, res, next) => {
 
         jwt.sign(
             payload,
-            process.env.JWTSECRECT,
+            config.get('jwtSecret'),
             { expiresIn: 360000 },
             (err, token) => {
                 if (err) throw err;
@@ -112,8 +112,7 @@ exports.postLogin = async (req, res, next) => {
         );
 
     } catch(err) {
-        console.log(err)
-        console.error(err.message);
+        console.error(err);
         res.status(500).send('Server Error')
     }
 }
