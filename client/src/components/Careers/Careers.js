@@ -22,33 +22,35 @@ class Careers extends Component {
         this.getJobs();
     }
 
-    getJobs = () => {
+    getJobs = async () => {
         this.setState({
             loading: true
         })
-   
-            const config = {
-                
-            }
-         axios.get('/api/jobs/', {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-         }).then((res) => {
-            let data = res.data
-            let jobs = [];
-            data.forEach(job => jobs.push(job));
+        try {
+            const res = await axios.get('/api/jobs/', {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+             })
+             if (res) {
+                let data = res.data
+                let jobs = [];
+                data.forEach(job => jobs.push(job));
+                this.setState({
+                    loading: false,
+                    jobs: jobs
+                })
+             } else {
+                this.setState({
+                    loading: false
+                })
+             }
+        } catch(err) {
+            console.error(err)
             this.setState({
-                loading: false,
-                jobs: jobs
-            })
-         })
-         .catch(error => {
-             console.error(error)
-             this.setState({
-                loading: false,
-            })
-         })
+               loading: false,
+           })
+        }
     }
 
     toggleClose = () => {
@@ -93,14 +95,19 @@ class Careers extends Component {
                         let responsibilities = job.responsibilities;
                         let id = job._id;
                         return (
-                            <div className={classes.PostContainer} key={i}>
+
+                            <div className={classes.PostContainer} key={id}>
+
                                 <JobPost
                                     job={job}
                                     id={id}
                                     title={title}
                                     requirements={requirements}
                                     responsibilities={responsibilities}
-                                    onRemove={(id) => this.handleRemove(id)}/>
+                                    jobKey={id}
+                                    onRemove={(id) => this.handleRemove(id)}
+                                    />
+
                             </div>
                         )
                     })

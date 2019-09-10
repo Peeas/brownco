@@ -71,6 +71,14 @@
     align-content: center;
     align-items: center;
 }
+.JobActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.JobActions Div {
+    padding-right: 10px;
+}
 .MessagePadding {
     margin: 40px
 }

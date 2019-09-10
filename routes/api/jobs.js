@@ -11,7 +11,7 @@ const {
 
 router.get('/', jobsController.getJobs);
 
-router.post('/resume', jobsController.postResume);
+router.post('/resume/:id', jobsController.postResume);
 
 
 router.post('/', [isAuth, [

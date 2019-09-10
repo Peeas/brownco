@@ -4,14 +4,14 @@ const connectDB = require('./config/db');
 const app = express();
 const multer = require('multer')
 require('dotenv').config();
-const path = require('path')
+const path = require('path');
 // connect to database
 connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.use(multer().single('resume'));
+app.use(multer().single('file'));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

@@ -8,7 +8,7 @@ import AuthContext from '../../../context/auth-context';
 import Button from '@material-ui/core/Button';
 import { ThemeProvider } from '@material-ui/styles';
 import { red } from '@material-ui/core/colors';
-import { createMuiTheme, withStyles, makeStyles } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 const theme = createMuiTheme({
     palette: {
       secondary: red,

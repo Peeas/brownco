@@ -6,9 +6,9 @@ import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import windEnergy from '../../assets/images/WindEnergy.jpg';
 import hydroImg from '../../assets/images/Hydrogen.jpg';
-import bioImg from '../../assets/images/Biomass.png';
-import wasteWaterImg from '../../assets/images/WasteWater.png';
-import solarImg from '../../assets/images/Solar.jpg';
+import bioImg from '../../assets/images/shutterstock_114362800.jpg';
+import wasteWaterImg from '../../assets/images/shutterstock_378017860.jpg';
+import solarImg from '../../assets/images/shutterstock_189889886.jpg';
 import hydroelectricImg from '../../assets/images/HydroelectricPower.jpg';
 
 const imgStyle = {
