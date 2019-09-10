@@ -9,6 +9,7 @@ import AuthContext from '../../../context/auth-context';
 const NavigationItems = (props) => {
     const { width } = useWindowDimensions();
     const authContext = useContext(AuthContext);
+    // <button className={classes.Logout} onClick={() => authContext.logout()}>logout</button>
     return (
         <div> 
             { width > 949 ?
@@ -17,7 +18,7 @@ const NavigationItems = (props) => {
                 <NavigationItem link="/aboutus">about us</NavigationItem>
                 <NavigationItem link="/careers">careers</NavigationItem>
                 <NavigationItem link="/contactus">contact</NavigationItem>
-                {authContext.authenticated ? <button className={classes.Logout} onClick={() => authContext.logout()}>logout</button>: ''}
+                {authContext.authenticated ? <NavigationItem isLogout={true}>LOGOUT</NavigationItem> : ''}
             </ul>
             : <NestedList />}
         </div>

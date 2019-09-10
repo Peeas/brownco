@@ -32,19 +32,15 @@ class Careers extends Component {
                     'Content-Type': 'application/json'
                 }
              })
-             if (res) {
-                let data = res.data
-                let jobs = [];
-                data.forEach(job => jobs.push(job));
-                this.setState({
-                    loading: false,
-                    jobs: jobs
-                })
-             } else {
-                this.setState({
-                    loading: false
-                })
-             }
+           
+            let data = res.data
+            let jobs = [];
+            data.forEach(job => jobs.push(job));
+            this.setState({
+                loading: false,
+                jobs: jobs
+            })
+             
         } catch(err) {
             console.error(err)
             this.setState({
@@ -56,7 +52,8 @@ class Careers extends Component {
     toggleClose = () => {
         this.setState({
             showPost: !this.state.showPost
-        })
+        });
+        this.getJobs();
     }
     handleNewJob = (job) => {
         const oldJobs = this.state.jobs;
@@ -66,24 +63,18 @@ class Careers extends Component {
         })
         this.toggleClose();
     }
-    handleRemove = (id) => {
-        let jobs = this.state.jobs;
-        let toDelete = jobs.filter((el) => el.id === id)
-        let newJobs = jobs.slice(jobs.indexOf(toDelete), 1);
-        this.setState({
-            jobs: newJobs
-        })
+    handleRemove = () => {
+        this.getJobs();
+    }
+    handleUpdate = (job) => {
+        this.getJobs();
     }
     render() {
+
         let posts;
+
         let jobs = this.state.jobs;
-        if (this.state.loading) {
-            posts = (
-            <div className={classes.Spinner}>
-                <Loader />
-            </div>
-            )
-        }
+        
 
         if (jobs.length > 0) {
             posts = (
@@ -105,7 +96,8 @@ class Careers extends Component {
                                     requirements={requirements}
                                     responsibilities={responsibilities}
                                     jobKey={id}
-                                    onRemove={(id) => this.handleRemove(id)}
+                                    onRemove={() => this.handleRemove()}
+                                    updateJob={(job) => this.handleUpdate(job)}
                                     />
 
                             </div>
@@ -137,10 +129,19 @@ class Careers extends Component {
                     <div className={classes.CareersHero}>
                             <div className={classes.CareersTitle}>Available Positions</div>
                     </div>
-                        {posts}                    
+                    {this.state.loading ? (
+                        <div className={classes.Spinner}>
+                            <Loader />
+                        </div>
+                    ) : (
+                        <div>
+                            {posts}  
+                        </div>
+                    )
+                    }                  
                     <div className={classes.AddPostBtn} >
-                        {this.context.authenticated ? <Button onClick={this.toggleClose}variant="contained" color="primary" >
-                        Add Job Post
+                        {this.context.authenticated ? <Button onClick={this.toggleClose} color="primary">
+                        + Add Job Post
                     </Button> : ''}
                     </div>
     

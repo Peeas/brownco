@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Loader from '../../UI/Loader/Loader';
 import axios from 'axios'
 import AuthContext from '../../../context/auth-context';
-import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ResponsiveDialog from '../../UI/ResponsiveDialog/ResponsiveDialog';
@@ -105,6 +105,12 @@ class JobPost extends Component {
             showEdit: true
         })
     }
+    closeEdit = (job) => {
+        this.setState({
+            showEdit: false,
+        });
+        this.props.updateJob(job)
+    }
     render () {
         let loading;
         if (this.state.loading) {
@@ -141,7 +147,7 @@ class JobPost extends Component {
                     isOpen={this.state.showEdit === true}
                     onClose={()=>{this.setState({showEdit: false})}}>
                         <NewJobPost
-                            onCloseEdit={(status)=>this.toggleClose(status)}
+                            onCloseEdit={(job)=>this.closeEdit(job)}
                             isEdit={true}
                             job={this.props.job}/>
                 </ResponsiveDialog>
@@ -157,12 +163,16 @@ class JobPost extends Component {
                          { this.context.authenticated ?
                             <div className={classes.JobActions}>
                                 <div>Job ID: {this.props.jobKey}</div>
-                                <Fab color="primary" aria-label="edit" >
-                                    <EditIcon onClick={this.handleEdit} />
-                                </Fab>
-                                <Fab color="secondary" onClick={this.handleDelete} aria-label="edit">
-                                    <DeleteIcon />
-                                </Fab>
+                                <div>
+                                    <IconButton onClick={this.handleEdit} aria-label="edit">
+                                        <EditIcon  />
+                                    </IconButton>
+                                </div>
+                                <div>
+                                    <IconButton color="secondary" onClick={this.handleDelete} aria-label="edit">
+                                        <DeleteIcon />
+                                    </IconButton>
+                                </div>
                             </div>
                             : ''}
                         
@@ -219,3 +229,4 @@ class JobPost extends Component {
 }
 
 export default JobPost;
+

@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin-top: 72px;
 }
 .CareersContainer {
@@ -14,14 +15,13 @@
 .JobpostContainer, .Spinner, .AddPostBtn {
     display: flex;
     flex-direction: column;
-
-    
     margin: 0 auto;
 }
+.AddPostBtn {
+    margin-bottom: 20px;
+}
 .JobpostContainer, .Spinner {
-
     margin-top: 80px;
-
 }
 .CareersTitle {
     color: rgba(255,255,255,0.87);
@@ -45,4 +45,11 @@
 
     }
 }
+
+@media(max-width: 600px) {
+    .JobpostContainer {
+       padding: 15px;
+    }
+}
+
 

@@ -60,10 +60,10 @@ class ResponsiveDialog extends Component {
                             {this.props.isDeleteJob ?
                                 <ThemeProvider theme={theme}>
                                     <div className={classes.JobDelete}>
-                                    <Button onClick={() => this.props.onClose(false)} variant="contained">Cancel</Button>
-                                    <Button onClick={() => this.props.onClose(true)} variant="contained" color="secondary">
-                                        Delete
-                                    </Button>
+                                        <Button onClick={() => this.props.onClose(false)}>Cancel</Button>
+                                        <Button onClick={() => this.props.onClose(true)} variant="contained" color="secondary">
+                                            Delete
+                                        </Button>
                                     </div>
                                 </ThemeProvider>
                             : ''}

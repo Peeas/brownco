@@ -61,7 +61,7 @@ class NewJobPost extends Component {
             if (this.props.isEdit) {
                 res = await axios.put(`/api/jobs/${this.props.job._id}`, body, config);
                 if (res.status === 200) {
-                    this.props.onCloseEdit(false)
+                    this.props.onCloseEdit(res.data)
                 }
             } else {
                 res = await axios.post('/api/jobs', body, config);
@@ -144,7 +144,7 @@ class NewJobPost extends Component {
                         </Button>
                     </div>
                     <div className={classes.ActionRow}>
-                        <button type="submit">Save</button>
+                        <button className={classes.CommonButton} type="submit">Save</button>
                     </div>
                 </form>
             </div>

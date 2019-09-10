@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './NavigationItem.module.css';
 import { NavLink } from 'react-router-dom';
+import AuthContext from '../../../../context/auth-context';
 
-const navigationItem = ( props ) => (
-    <li className={classes.NavigationItem}>
+const NavigationItem = ( props ) => {
+    const authContext = useContext(AuthContext);
+
+    return (
+        <li className={classes.NavigationItem}>
+        {!props.isLogout ?
         <NavLink
-            to={props.link}
-            exact
-            className={props.active ? classes.active : null}>{props.children}</NavLink>
+        to={props.link}
+        exact
+        className={props.active ? classes.active : null}>{props.children}</NavLink> :
+        <div onClick={() => authContext.logout()}> {props.children} </div>
+        }
+        
     </li>
-);
+    )
+}
 
-export default navigationItem;
+
+
+export default NavigationItem;
