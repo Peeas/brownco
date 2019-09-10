@@ -67,7 +67,7 @@ class Auth extends Component {
                         />
                     </div>
                     <div className={classes.ActionRow}>
-                        <button type="submit">Login</button>
+                        <button className={classes.CommonButton} type="submit">Login</button>
                     </div>
                 </form>
             </div>
