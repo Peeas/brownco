@@ -92,7 +92,7 @@ exports.postResume = async (req, res, next) => {
         const job = await Job.findById(req.params.id);
        
         const newEmail = await transporter.sendMail({
-            to: 'rcdurazo@gmail.com',
+            to: 'Lladow@browncoinc.com',
             from: 'browncodev@gmail.com',
             subject: `application recieved for ${job.title}`,
             html: `<div>Hello Brownco,</div> <br>
