@@ -112,8 +112,7 @@ exports.postLogin = async (req, res, next) => {
         );
 
     } catch(err) {
-        console.log(err)
-        console.error(err.message);
+        console.error(err);
         res.status(500).send('Server Error')
     }
 }

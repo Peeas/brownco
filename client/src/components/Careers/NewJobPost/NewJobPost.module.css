@@ -1,9 +1,11 @@
-.AuthContainer {
+.AuthContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+}
+.AddRequirement {
+    text-align: center;
 }
 .textField {
     width: 300px;

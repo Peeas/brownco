@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import classes from './Auth.module.css';
 import TextField from '@material-ui/core/TextField';
-import axios from 'axios';
 import AuthContext from '../../context/auth-context';
-axios.defaults.baseURL = "http://localhost:5000"
+
 class Auth extends Component {
     state = {
         loginForm: {
