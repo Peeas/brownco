@@ -4,6 +4,7 @@
     flex-direction: column;
     align-content: center;
     margin: 0 auto;
+    height: 100%;
 }
 
 .Notification {
@@ -86,4 +87,28 @@
         padding-bottom: 24px;
         max-width: 350px;
     }
+}
+.CommonButton {
+    margin: 40px auto;
+    background-color: #FF4504;
+    border: 1px solid #FF4504;
+    border-radius: 5px;
+    display: inline-flex;
+    font-style: normal;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+    padding: 15px 20px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-family: Rubik;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    width: 199px; 
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+
+    /* identical to box height */
 }

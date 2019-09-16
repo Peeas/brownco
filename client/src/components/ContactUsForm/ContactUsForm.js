@@ -204,7 +204,7 @@ class ContactUsForm extends Component {
     
                         </div>
                         <div className={classes.BtnRow}>
-                            <button type="submit">Send</button>
+                            <button className={classes.CommonButton} type="submit">Send</button>
                         </div>
                     </form>
                     </div>

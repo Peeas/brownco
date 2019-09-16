@@ -42,13 +42,14 @@
 @media(min-width: 600px) {
     .JobpostContainer {
         width: 600px;
-
+        min-height: 600px;
     }
 }
 
 @media(max-width: 600px) {
     .JobpostContainer {
        padding: 15px;
+       min-height: 600px;
     }
 }
 
