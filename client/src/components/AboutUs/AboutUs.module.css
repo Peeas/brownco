@@ -12,22 +12,36 @@
 .ContextContainer {
     display: flex;
     flex-direction: column;
-
     align-items: center;
     margin: auto;
 }
 
+.AboutUsHero {
+    margin-top: 72px;
+    min-height: 400px;
+    background-image: url(../../assets/images/Hero@2x.png);
+    background-repeat:no-repeat;
+    width: 100%;
+
+}
 .Context {
     margin-top: 65px;
-    max-width: 618px;
+    max-width: 698px;
     opacity: 0.54;
     color: #000000;
     font-family: Rubik;
     font-size: 14px;
     line-height: 28px;
 }
-
 .HeroContentTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+.HeroContentTitle h1 {
     height: 71px;
     width: 251px;
     color: rgba(255, 255, 255, 0.87);
@@ -40,6 +54,7 @@
     margin-top: 65px;
     display: flex;
     flex-direction: column;
+    max-width: 698px;
 }
 
 .SecondContextContainer h3,
@@ -161,25 +176,28 @@
     .SafetyColumns {
         width: 600px;
     }
-    .SecondContextContainer {
-        width: 600px;
-    }
+
     .SafetyPolicy {
         height: 400px;
+    }
+    .SecondContextContainer {
+        width: 698px;
+
     }
 }
 @media(max-width: 630px) {
     .Top {
         height: 40vh;
     }
-    .Context {
-        margin-left: 15px;
-        margin-right: 15px
+    .ContextContainer {
+        padding: 30px;
     }
     .HeroContentTitle{
         font-size: 24px; 
     }
-
+    .Context {
+        margin-top: 30px;
+    }
     .SafetyColumns {
         flex-direction: column;
     }

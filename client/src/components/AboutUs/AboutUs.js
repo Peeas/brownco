@@ -1,7 +1,5 @@
 import React, {Fragment} from 'react';
 import classes from './AboutUs.module.css';
-import { Parallax, Background } from 'react-parallax';
-import AboutUsImage from '../../assets/images/Hero@2x.png';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 
@@ -15,16 +13,11 @@ const AboutUs = () => {
     return (
         <Fragment>
                 <section className={classes.Top}>
-                    <Parallax strength={600}>
-                        <Background className={classes.heroImageContainer}>
-                            <img style={imgStyle} src={AboutUsImage} alt="hero" />
-                        </Background>
-                        <div className={classes.HomepageHero}>
-                            <div className={classes.HeroContentTitle}>
-                                About Us
-                            </div>
+                    <div className={classes.AboutUsHero}>
+                        <div className={classes.HeroContentTitle}>
+                            <h1>About Us</h1>
                         </div>
-                    </Parallax>
+                    </div>
                 </section>
                 <section className={classes.ContextContainer}>
                     <div className={classes.Context}>
