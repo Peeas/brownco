@@ -8,5 +8,13 @@ html {
 
 body {
     font-family: 'Rubik', sans-serif;
+    height: 100%;
     margin: 0;
+    position: relative;
+}
+#nested-list-subheader:hover {
+    cursor: pointer;
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
 }

@@ -40,3 +40,8 @@
 
     /* identical to box height */
 }
+.LinkName:hover {
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
+}

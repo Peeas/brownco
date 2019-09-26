@@ -10,7 +10,6 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import { withRouter } from 'react-router-dom';
 import AuthContext from '../../../../context/auth-context';
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -38,7 +37,7 @@ const NestedList = props => {
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader className={classes.Brand} onClick={() => handleNav('/')} component="div" id="nested-list-subheader">
           Brownco
         </ListSubheader>
       }

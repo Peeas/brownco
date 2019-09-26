@@ -29,7 +29,7 @@ const DemolitionExcavation = () => {
                 </div>
                 <div className={classes.titleContainer}>
                     <div>
-                    From concrete slabs, steel structures to buildings Brownco Construction Company Inc. has the experience, knowledge and equipment including excavators with sheer attachments and hydraulic hammers to deconstruct any form. Brownco will manage all aspects of your demolition which may include removing hazardous or regulated materials, obtaining permits, submitting notices, disconnecting utilities and develop site specific safety and work plans. or the project.
+                    From concrete slabs, steel structures to buildings Brownco Construction Company Inc. has the experience, knowledge and equipment including excavators with sheer attachments and hydraulic hammers to deconstruct any form. Brownco will manage all aspects of your demolition which may include removing hazardous or regulated materials, obtaining permits, submitting notices, disconnecting utilities and develop site specific safety and work plans.
                     </div>
                 </div>
                 <div className={classes.SolutionsContainer}>

@@ -9,7 +9,11 @@
     left: 0;
 
 }
-
+.Background {
+    background-image: url(../../assets/images/tenant.jpg);
+    background-size: cover;
+    width: 100vw;
+}
 .HomepageHero {
     margin-top: 4vh;
     text-align: center;
@@ -92,16 +96,28 @@
         flex-direction: column;
     }
 
-
+    .Background {
+        min-height: 600px;
+        background-repeat: repeat-y;
+        margin-top: 81px;
+    }
 
     .titleContainer {
         height: 300px;
         padding: 15px;
     }
-
+    .HeroContentTitle {
+        font-size: 45px;
+    }
+    .titleContainer {
+        margin: 20px;
+    }
 }
 @media(min-width: 699px) {
     .DesignTitle {
         width: 549px;
+    }
+    .Background {
+        min-height: 600px;
     }
 }

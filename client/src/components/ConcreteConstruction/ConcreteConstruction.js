@@ -1,14 +1,9 @@
 import React , { Fragment } from 'react'
 import classes from './ConcreteConstruction.module.css';
-import concreteHero from '../../assets/images/img-concrete.jpg'
 import ContactUs from '../ContactUs/ContactUs';
 import { Parallax, Background } from 'react-parallax';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
-const imgStyle = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat',
-    // marginTop: '260px'
-}
+
 const ConcreteConstruction = () => {
     return (
         <Fragment>
@@ -16,8 +11,7 @@ const ConcreteConstruction = () => {
 
                     <div className={classes.Top}>
                         <Parallax strength={800}>
-                            <Background className={classes.heroImageContainer}>
-                                <img style={imgStyle} src={concreteHero} alt="hero" />
+                            <Background className={classes.Background}>
                             </Background>
                             <div className={classes.HomepageHero}>
                                 <div className={classes.HeroContentTitle}>

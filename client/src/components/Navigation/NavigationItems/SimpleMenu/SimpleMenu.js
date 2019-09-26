@@ -29,11 +29,11 @@ const SimpleMenu = props => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => handleClose('/structural-steel')}>Structural Steel</MenuItem>
-        <MenuItem onClick={() => handleClose('/concrete-construction')}>Concrete Construction</MenuItem>
-        <MenuItem onClick={() => handleClose('/demolition-excavation')}>Demolition Excavation</MenuItem>
-        <MenuItem onClick={() => handleClose('/renewable-resources')}>Renewable Resources</MenuItem>
-        <MenuItem onClick={() => handleClose('/tenant-improvement')}>Tenant Improvement</MenuItem>
+        <MenuItem onClick={() => handleClose('/structural-steel')}><span>Structural Steel</span></MenuItem>
+        <MenuItem onClick={() => handleClose('/concrete-construction')}><span>Concrete Construction</span></MenuItem>
+        <MenuItem onClick={() => handleClose('/demolition-excavation')}><span>Demolition Excavation</span></MenuItem>
+        <MenuItem onClick={() => handleClose('/renewable-resources')}><span>Renewable Resources</span></MenuItem>
+        <MenuItem onClick={() => handleClose('/tenant-improvement')}><span>Tenant Improvemen</span></MenuItem>
 
       </Menu>
     </div>

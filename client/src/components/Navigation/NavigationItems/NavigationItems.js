@@ -15,10 +15,10 @@ const NavigationItems = (props) => {
             { width > 949 ?
             <ul className={classes.NavigationItems}>
                 <SimpleMenu /> 
-                <NavigationItem link="/aboutus">about us</NavigationItem>
-                <NavigationItem link="/careers">careers</NavigationItem>
-                <NavigationItem link="/contactus">contact</NavigationItem>
-                {authContext.authenticated ? <NavigationItem isLogout={true}>LOGOUT</NavigationItem> : ''}
+                <NavigationItem link="/aboutus"><span className={classes.LinkName}>about us</span></NavigationItem>
+                <NavigationItem link="/careers"><span className={classes.LinkName}>careers</span></NavigationItem>
+                <NavigationItem link="/contactus"><span className={classes.LinkName}>contact</span></NavigationItem>
+                {authContext.authenticated ? <NavigationItem isLogout={true}><span className={classes.LinkName}>LOGOUT</span></NavigationItem> : ''}
             </ul>
             : <NestedList />}
         </div>

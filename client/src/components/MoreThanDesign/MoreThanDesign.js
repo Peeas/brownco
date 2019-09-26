@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './MoreThanDesign.module.css';
-import budget from '../../assets/images/Budget.webp';
+import budget from '../../assets/images/Budget@2x.svg';
 import analysisimg from '../../assets/images/Analysis@2x.svg';
 import certImg from '../../assets/images/Certification@2x.svg';
 const  MoreThanDesign = () => {

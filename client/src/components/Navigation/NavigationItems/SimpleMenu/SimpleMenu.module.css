@@ -14,3 +14,13 @@
 	letter-spacing: 0.92px;
     cursor: pointer;
 }
+.Whatwedo:hover {
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
+}
+span:hover {
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
+}

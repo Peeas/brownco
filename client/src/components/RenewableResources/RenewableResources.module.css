@@ -9,7 +9,11 @@
     left: 0;
 
 }
-
+.Background {
+    background-image: url(../../assets/images/Background-renew.png);
+    background-size: cover;
+    width: 100vw;
+}
 .HomepageHero {
     margin-top: 4vh;
     text-align: center;
@@ -146,10 +150,14 @@
         height: 71px;
         color: rgba(255, 255, 255, 0.87);
         font-family: Rubik;
-        font-size: 30px;
+        font-size: 45px;
         font-weight: 300;
     }
-
+    .Background {
+        min-height: 600px;
+        background-repeat: repeat-y;
+        margin-top:81px;
+    }
 }
 
 @media(min-width: 699px) {
@@ -175,5 +183,9 @@
         width: 50%;
         display: flex;
         height: 100%;
+    }
+    .Background {
+
+        min-height: 600px;
     }
 }

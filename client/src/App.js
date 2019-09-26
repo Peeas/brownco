@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom'; 
 
 import Layout from './hoc/Layout/Layout';
@@ -15,6 +14,8 @@ import RenewableResources from './components/RenewableResources/RenewableResourc
 import Careers from './components/Careers/Careers';
 import AuthContext from '../src/context/auth-context';
 import axios from 'axios';
+import theme from './theme'
+import { MuiThemeProvider } from '@material-ui/core';
 
 class App extends Component {
   state = {
@@ -78,9 +79,11 @@ class App extends Component {
           login: (user) => this.loginHandler(user),
           logout: () => this.logoutHandler()
           }}>
-          <Layout>
-            {routes}
-          </Layout>
+            <MuiThemeProvider theme={theme}>
+              <Layout>
+                {routes}
+              </Layout>
+            </MuiThemeProvider>
         </AuthContext.Provider>
       </ParallaxProvider>
 

@@ -91,9 +91,9 @@
         display: flex;
         flex-direction: column;
     }
-
-
-
+    .HeroContentTitle{
+        font-size: 45px;
+    }
     .titleContainer {
         height: 300px;
         padding: 15px;

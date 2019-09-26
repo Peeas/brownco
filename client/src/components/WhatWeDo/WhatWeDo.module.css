@@ -100,6 +100,9 @@
         height: 300px;
         padding: 15px;
     }
+    .HeroContentTitle{
+        font-size: 45px;
+    }
 
 }
 @media(min-width: 699px) {

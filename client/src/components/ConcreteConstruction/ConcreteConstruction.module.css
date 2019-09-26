@@ -9,7 +9,11 @@
     left: 0;
 
 }
-
+.Background {
+    background-image: url(../../assets/images/img-concrete.jpg);
+    background-size: cover;
+    width: 100vw;
+}
 .HomepageHero {
     margin-top: 4vh;
     text-align: center;
@@ -19,6 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .HeroContentTitle {
@@ -101,9 +106,26 @@
         padding: 15px;
     }
 
+    .HomepageHero {
+        height: 300px;
+    }
+
+    .Background {
+        min-height: 600px;
+        background-repeat: repeat-y;
+    }
+    .HeroContentTitle{
+        font-size: 45px;
+    }
+
 }
 @media(min-width: 699px) {
     .DesignTitle {
         width: 549px;
     }
+    .Background {
+
+        min-height: 600px;
+    }
+    
 }

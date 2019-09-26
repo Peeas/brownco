@@ -18,9 +18,8 @@
 
 .AboutUsHero {
     margin-top: 72px;
-    min-height: 400px;
     background-image: url(../../assets/images/Hero@2x.png);
-    background-repeat:no-repeat;
+    background-repeat: stretch;
     width: 100%;
 
 }
@@ -165,7 +164,6 @@
     }
 }
 
-
 @media(min-width: 631px) {
     .Top {
         height: 100vh;
@@ -182,12 +180,14 @@
     }
     .SecondContextContainer {
         width: 698px;
-
+    }
+    .AboutUsHero {
+        min-height: 400px;
     }
 }
 @media(max-width: 630px) {
     .Top {
-        height: 40vh;
+        height: 100vh;
     }
     .ContextContainer {
         padding: 30px;
@@ -204,6 +204,8 @@
     .SafetyPolicy {
         height: 650px;
     }
-
+    .AboutUsHero {
+        min-height: 300px;
+    }
 
 }

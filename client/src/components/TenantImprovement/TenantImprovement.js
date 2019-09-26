@@ -3,12 +3,6 @@ import classes from './TenantImprovement.module.css'
 import ContactUs from '../ContactUs/ContactUs';
 import { Parallax, Background } from 'react-parallax';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
-import tenantHero from '../../assets/images/tenant.jpg';
-const imgStyle = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat',
-    marginTop: '350px',
-}
 
 const TenantImprovement = () => {
     return (
@@ -17,8 +11,7 @@ const TenantImprovement = () => {
 
                 <div className={classes.Top}>
                     <Parallax strength={800}>
-                        <Background className={classes.heroImageContainer}>
-                        <img style={imgStyle} src={tenantHero} alt="hero" />
+                        <Background className={classes.Background}>
                         </Background>
                         <div className={classes.HomepageHero}>
                             <div className={classes.HeroContentTitle}>

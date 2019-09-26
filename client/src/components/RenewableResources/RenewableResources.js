@@ -1,21 +1,14 @@
 import React, {Fragment}  from 'react'
 import classes from './RenewableResources.module.css';
 import { Parallax, Background } from 'react-parallax';
-import renewHero from '../../assets/images/Background-renew.png';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import windEnergy from '../../assets/images/WindEnergy.jpg';
-import hydroImg from '../../assets/images/Hydrogen.jpg';
+import hydroImg from '../../assets/images/hydrogenstock.jpg';
 import bioImg from '../../assets/images/shutterstock_114362800.jpg';
 import wasteWaterImg from '../../assets/images/shutterstock_378017860.jpg';
 import solarImg from '../../assets/images/shutterstock_189889886.jpg';
-import hydroelectricImg from '../../assets/images/HydroelectricPower.jpg';
 
-const imgStyle = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat',
-    marginTop: '325px'
-}
 const RenewableResources = () => {
     return (
     <Fragment>
@@ -23,8 +16,7 @@ const RenewableResources = () => {
 
                 <div className={classes.Top}>
                     <Parallax strength={800}>
-                        <Background className={classes.heroImageContainer}>
-                        <img style={imgStyle} src={renewHero} alt="hero" />
+                        <Background className={classes.Background}>
                         </Background>
                         <div className={classes.HomepageHero}>
                             <div className={classes.HeroContentTitle}>
@@ -160,26 +152,6 @@ const RenewableResources = () => {
 
                 </section>
 
-                <section className={classes.Concrete}>
-                    <div className={classes.SectionImgContainer}>
-                        <img src={hydroelectricImg} alt="hydroelectricpower"/>
-                    </div>
-                    
-                    <div className={classes.ConcreteCopyContainer}>
-                        <div>
-                            <div className={classes.Orangebar}></div>
-                            <div className={classes.SectionHeader}>Hydroelectric Power</div>
-                            <ul className={classes.ConcreteCopy}>
-                                <li>Turbines</li>
-                                <li>Generators</li>
-                                <li>Transformers</li>
-                                <li>Powerhouse</li>
-                            </ul>
-                           
-                        </div>
-                    </div>
-
-                </section>
                 <MoreThanDesign />
                 
                 <div>

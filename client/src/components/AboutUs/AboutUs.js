@@ -3,11 +3,6 @@ import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 
-const imgStyle = {
-    backgroundSize: 'cover',
-    backgroundRepeat: 'repeat',
-    marginTop: '260px'
-}
 const AboutUs = () => {
 
     return (
@@ -34,7 +29,10 @@ const AboutUs = () => {
                             </div>
                             <div className={classes.NumericVals}>
                                 Number: 2171804 <br/>
-                                Entity Identification Number: 33-0865392
+                                Entity Identification Number: 33-0865398 <br/>
+                                California Corporation Number:  C-2171804 <br/>
+                                Department of Industrial Relations Number:  1000012241 <br/>
+                                Small Business Certification Number: 2015482
                             </div>
                     </div>
 
@@ -53,7 +51,7 @@ const AboutUs = () => {
 
                         <p>Washington Department of Labor Number: 602078929</p>
 
-                        <p>Certified Wind Turbine Installere</p>
+                        <p>Certified Wind Turbine installer</p>
 
                     </div>
                     <div className={classes.FootImgContainer}>
