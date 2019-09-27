@@ -7,6 +7,10 @@
     align-items: center;
     height: 100%;
 }
+.NavigationItems a {
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+}
 .links {
     display: flex;
     flex-direction: row;
