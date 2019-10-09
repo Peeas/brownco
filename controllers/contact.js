@@ -19,7 +19,7 @@ exports.postContactemail = async (req, res, next) => {
     try {
         const { firstName, lastName, companyName, email, phone, service, comment } = req.body;
         const newEmail = await transporter.sendMail({
-            to: 'Lladow@browncoinc.com', 
+            to: 'lindy.browncoinc@gmail.com', 
             from: email,
             subject: `brownco contact us: ${service}`,
             html: `<div>Hello Brownco,</div> <br>

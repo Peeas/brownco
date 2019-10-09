@@ -52,10 +52,10 @@
 }
 
 .SolutionsContainer {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 295px;
+    height: 495px;
     background-color: #EAEAEA;
 }
 
@@ -81,7 +81,6 @@
 }
 
 .SolutionsColumns div {
-    height: 120px;
     width: 220px;
     opacity: 0.54;
     color: #000000;
@@ -98,7 +97,7 @@
     }
 
     .SolutionsContainer {
-        height: 600px;
+        height: 1000px;
     }
 
     .titleContainer {
