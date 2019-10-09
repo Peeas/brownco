@@ -31,22 +31,38 @@ as concrete repairs, refurbishment and facility concrete maintence. Brownco's pr
                             <div className={classes.StructuralSub}>Concrete Cast In Place Solutions</div>
                             <div className={classes.SolutionsColumns}>
                                 <div>
-                                Stairways <br />
-                                Catwalks <br />
-                                Steel Structures <br />
-                                Steel Fabrication
+                                    Pits <br />
+                                    Decks <br />
+                                    Curbs <br />
+                                    Slabs <br/>
+                                    Footings <br/>
+                                    Foundations <br/>
+                                    Bollards <br/>
+                                    Ramps <br/>
+                                    Handicap Retrofits
                                 </div>
                                 <div>
-                                Steel Erection <br />
-                                Steel Unit Positioning and Alignment <br />
-                                Mezzanines <br />
-                                Seismic Retrofit
+                                    Truck Dock <br />
+                                    Levelers <br />
+                                    Equipment and Tank Pads <br />
+                                    Containment Dikes <br/>
+                                    Storm Water Pollution Prevention <br/>
+                                    Concrete Sumps <br />
+                                    Retaining Walls <br />
+                                    Trenches <br />
+                                    Clarifier Floors <br />
+                                    Seismic Retrofit
                                 </div>
                                 <div>
-                                Mechanical Equipment Platforms <br />
-                                Hand Rails <br />
-                                HVAC Rooftop Platforms <br />
-                                Billboard Signs and ID Signs 
+                                    Concrete Caissons <br />
+                                    Epoxy Injection <br />
+                                    Floor Coatings and Sealants <br />
+                                    Structural Upgrades <br/>
+                                    Grout <br/>
+                                    Flatwork <br/>
+                                    Commercial Concrete Flooring <br/>
+                                    Crane Foundations <br/>
+                                    Facility Maintenance
                                 </div>
                             </div>
                         </div>

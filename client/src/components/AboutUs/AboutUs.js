@@ -28,7 +28,6 @@ const AboutUs = () => {
                                 Strategic Mix of Technology and Business
                             </div>
                             <div className={classes.NumericVals}>
-                                Number: 2171804 <br/>
                                 Entity Identification Number: 33-0865398 <br/>
                                 California Corporation Number:  C-2171804 <br/>
                                 Department of Industrial Relations Number:  1000012241 <br/>

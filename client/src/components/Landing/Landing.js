@@ -23,7 +23,7 @@ const Landing = props => {
                 <div className={classes.Top}>
 
                     <Parallax strength={600}>
-                        <Background  className={classes.heroImageContainer}>
+                        <Background className={classes.heroImageContainer}>
                             <img className={classes.HeroImage} src={heroBuilding} alt=""/>
                         </Background>
                         <div className={classes.HomepageHero}>
