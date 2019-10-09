@@ -33,7 +33,7 @@ const SimpleMenu = props => {
         <MenuItem onClick={() => handleClose('/concrete-construction')}><span>Concrete Construction</span></MenuItem>
         <MenuItem onClick={() => handleClose('/demolition-excavation')}><span>Demolition Excavation</span></MenuItem>
         <MenuItem onClick={() => handleClose('/renewable-resources')}><span>Renewable Resources</span></MenuItem>
-        <MenuItem onClick={() => handleClose('/tenant-improvement')}><span>Tenant Improvemen</span></MenuItem>
+        <MenuItem onClick={() => handleClose('/tenant-improvement')}><span>Tenant Improvement</span></MenuItem>
 
       </Menu>
     </div>
