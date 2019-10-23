@@ -32,7 +32,7 @@ const Footer = (props) => {
             <div>
               <p className={classes.CoTitle}>Brownco Construction Company, Inc.</p>
               <p className={classes.CoAddy}>1000 E. Katella Ave.
-              Anaheim, CA 902436
+              Anaheim, CA 92805
               (714) 935-9600</p>
             </div>
             <div  className={classes.ServiceResourceContainer}>
