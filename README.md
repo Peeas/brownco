@@ -2,7 +2,7 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory (keep in mind this directory is the server directory/full-stack if any installs are needed client side cd into client directory), you can run:
 
 ### `npm run client`
 
@@ -33,19 +33,38 @@ edits can be made and the application will reload.<br>
 
 ## Development workflow
 
-### `clone and install`
-
-After repo is cloned and installed locally (be sure to run npm i in the root and then in the client directory) <br>
-run git fetch origin
-
-### `workflow`
-
-on master branch<br>
-run git checkout origin master
-run git checkout -b BRANCHNAME i.e. git checkout -b PHASE2-22 
-now you should be on PHASE2-22 branch 
-on active development branch<br>
-run git pull --rebase origin master
---> make changes
+### clone and install
+ 
+`git clone https://github.com/Peeas/brownco.git`
+After repo is cloned and installed locally (be sure to run npm i in the root and then in the client directory)
+`npm i`
+`cd client npm i`
 
 
+### workflow
+
+#### on master branch
+in root directory 
+- `git checkout master`
+- `git checkout pull origin master`
+- `git checkout -b BRANCHNAME` i.e. git checkout -b PHASE2-22 
+    now you should be on PHASE2-22 branch <br>
+#### on active development branch
+
+- `git pull --rebase origin master`
+--> make changes <-- 
+- `git add .`
+- `git commit -m"YOUR COMMIT"`
+--> example: `git commit -m"PHASE2-22: make hero div same size done"`
+- `git pull --rebase origin master`
+- `git push origin BRANCHNAME`
+--> example `git push origin PHASE2-22`
+
+#### in github 
+- go to pushed branch
+- create a new pull request into master (feel free to ask me to review any code by adding me as a reviewer)
+- review changes and merge into master 
+
+## Deployment
+- GitHub deployment should be connected so that every push the master branch triggers a deployment or you can use the heroku cli in your terminal
+- heroku cli follow directions located here: https://dashboard.heroku.com/apps/mighty-springs-32875/deploy/heroku-git
