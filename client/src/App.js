@@ -16,6 +16,7 @@ import AuthContext from '../src/context/auth-context';
 import axios from 'axios';
 import theme from './theme'
 import { MuiThemeProvider } from '@material-ui/core';
+import Projects from './components/Projects/Projects';
 
 class App extends Component {
   state = {
@@ -58,10 +59,10 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/" exact component={Landing} />
+        <Route path="/projects" exact component={Projects} />
         <Route path="/aboutus" exact component={AboutUs} />
         <Route path="/structural-steel" exact component={WhatWeDo} />
         <Route path="/concrete-construction" exact component={ConcreteConstruction} />
-  
         <Route path="/demolition-excavation" exact component={DemolitionExcavation} />
         <Route path="/renewable-resources" exact component={RenewableResources} />
         <Route path="/tenant-improvement" exact component={TenantImprovement} />

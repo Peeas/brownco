@@ -1,0 +1,6 @@
+.ProjectsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 71.99px;
+    height: 100%;
+}
