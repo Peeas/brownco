@@ -206,8 +206,7 @@ class JobPost extends Component {
                             id={this.props.jobKey}
                             accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,.pdf"
                             className={classes.ResumeUpload}
-                            onChange={this.handleChange}
-                            value={this.state.resume} />
+                            onChange={this.handleChange} />
 
                     </form>
 

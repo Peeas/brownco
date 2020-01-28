@@ -9,10 +9,10 @@ class NewJobPost extends Component {
         jobPostForm: {
             title: '',
             responsibilities: '',
-            requirements: ['requirement 1'],
+            requirements: ['requirement'],
         },
         isEdit: false
-
+        
     }
 
     componentDidMount() {
@@ -95,7 +95,7 @@ class NewJobPost extends Component {
                         <TextField
                             id="title"
                             name="title"
-                            label="job Title"
+                            label="Job Title"
                             type="text"
                             value={this.state.jobPostForm.title}
                             className={classes.textField}

@@ -6,12 +6,17 @@ const ProjectSchema = new Schema({
         type: String, 
         required: true
     },
-    Description: {
+    description: {
         type: String,
         required: true
     },
-    image: {
-
+    file: {
+        type: String, 
+        required: true
+    },
+    imagePosition: {
+        type: String, 
+        required: true
     },
     date: {
         type: Date,
@@ -20,4 +25,4 @@ const ProjectSchema = new Schema({
 
 });
   
-  module.exports = Post = mongoose.model('job', JobSchema)
+  module.exports = Project = mongoose.model('project', ProjectSchema)

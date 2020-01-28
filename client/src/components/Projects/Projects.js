@@ -5,46 +5,81 @@ import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 import AddProject from './AddProject/AddProject';
 import classes from './Projects.module.css'
 import Hero from '../UI/Hero/Hero';
-import Project from './Project/Project';
+import ProjectList from './ProjectList/ProjectList';
+import axios from 'axios';
+import Loader from '../UI/Loader/Loader';
 class Projects extends Component {
     state = {
         projects: [],
-        loading: false,
+        loading: true,
         showJobModal: false
     }
     static contextType = authContext;
+    componentDidMount() {
+        this.getProjects();
+    }
 
+    getProjects = async () => {
+        this.setState({
+            loading: true
+        })
+        try {
+            const res = await axios.get('/api/project/', {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            let data = res.data;
+            let projects = [];
+            data.forEach(project => projects.push(project));
+            this.setState({
+                loading: false,
+                projects: projects
+            })
+        } catch(err) {
+            console.log(err);
+            this.setState({loading:false})
+        }
+    }
     toggleClose = () => {
         this.setState({
-            showJobModal: !this.state.showPost
+            showJobModal: !this.state.showJobModal
         });
     }
 
     render() {
         return (
             <Fragment>
-                <ResponsiveDialog
-                    isOpen={this.state.showJobModal === true}
-                    onClose={this.toggleClose}>
-                        <AddProject></AddProject>
-                </ResponsiveDialog>
-                <div className={classes.ProjectsContainer}>
-                    <Hero heroText={'Projects'} />
-                    <Project 
-                        projectTitle={'Concrete Construction'}
-                        projectText={"Brownco Construction Company, Inc performs new concrete projects as well as concrete repairs, refurbishment and facility concrete maintenance. From site preparation, formwork, prefabrication, placement to finish, Brownco will complete your concrete projects in a timely, efficient and safe manner."}
-                        projectImage={'https://i.ytimg.com/vi/NCZ0eg1zEvw/maxresdefault.jpg'}/>
-
                     {
-                        this.context.authenticated ?
-                            (
-                                <Button onClick={this.toggleClose} color="primary">
-                                    + Add Project
-                                </Button> 
-                            )
-                        : ''
+                        this.state.loading ? (
+                            <div  className={classes.ProjectsContainer}>
+                                <Loader />
+                            </div>
+                        ) : (
+                            <div>
+                                <ResponsiveDialog
+                                    isOpen={this.state.showJobModal === true}
+                                    onClose={this.toggleClose}>
+                                        <AddProject toggleClose={this.toggleClose} />
+                                </ResponsiveDialog>
+                                <div className={classes.ProjectsContainer}>
+                                    <Hero heroText={'Projects'} />
+                                    <ProjectList projects={this.state.projects} />
+                                    {
+                                        this.context.authenticated ?
+                                            (
+                                                <div className={classes.AddProjectContainer}>
+                                                    <Button onClick={this.toggleClose} color="primary">
+                                                        + Add Project
+                                                    </Button> 
+                                                </div>
+                                            )
+                                        : ''
+                                    }
+                                </div>
+                            </div>
+                        )
                     }
-                </div>
             </Fragment>
         )
     }

@@ -1,0 +1,21 @@
+.AddProjectContainer {
+    padding: 16px 0;
+}
+.ProjectActionRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+}
+.textField {
+    width: 300px;
+}
+.ProjectForm {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 500px) {
+    .textField {
+        width: 200px;
+    }
+}

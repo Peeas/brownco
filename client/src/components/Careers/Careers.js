@@ -32,7 +32,7 @@ class Careers extends Component {
                     'Content-Type': 'application/json'
                 }
              })
-           
+
             let data = res.data
             let jobs = [];
             data.forEach(job => jobs.push(job));
@@ -142,7 +142,7 @@ class Careers extends Component {
                         + Add Job Post
                     </Button> : ''}
                     </div>
-    
+                    
                 </div>
             </Fragment>
 

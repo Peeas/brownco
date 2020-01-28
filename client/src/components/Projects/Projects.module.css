@@ -4,3 +4,11 @@
     margin-top: 71.99px;
     height: 100%;
 }
+.AddProjectContainer {
+    flex-direction: column;
+    display: flex;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
