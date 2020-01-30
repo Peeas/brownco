@@ -8,11 +8,14 @@ import Hero from '../UI/Hero/Hero';
 import ProjectList from './ProjectList/ProjectList';
 import axios from 'axios';
 import Loader from '../UI/Loader/Loader';
+
 class Projects extends Component {
     state = {
         projects: [],
         loading: true,
-        showJobModal: false
+        showEditModal: false,
+        editMode: false,
+        editProject: ''
     }
     static contextType = authContext;
     componentDidMount() {
@@ -30,11 +33,12 @@ class Projects extends Component {
                 }
             });
             let data = res.data;
-            let projects = [];
-            data.forEach(project => projects.push(project));
+            let projs = [];
+            data.forEach(el => projs.push(el));            
+            this.setState({projects: projs, loading: false})
             this.setState({
                 loading: false,
-                projects: projects
+                projects: projs
             })
         } catch(err) {
             console.log(err);
@@ -43,8 +47,40 @@ class Projects extends Component {
     }
     toggleClose = () => {
         this.setState({
-            showJobModal: !this.state.showJobModal
+            editMode: false,
+            showEditModal: !this.state.showEditModal
         });
+        this.getProjects();
+    }
+
+    onLauchEdit = (e) => {
+        let editProject = this.state.projects.find(project => {
+            return project._id === e
+        })
+        this.setState({
+            editMode: true,
+            showEditModal: true,
+            editProject: editProject
+        })
+    }
+
+    onDeleteProject = async(id) => {
+        const token = localStorage.getItem('token');
+        try {
+            const res = await axios.delete(`/api/project/${id}`, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `${token}`
+                }
+            })
+            if (res && res.status === 200) {
+                alert('Project successfully removed');
+                this.getProjects();
+            }
+        } catch(err) {
+            alert('Error removing project!');
+            console.error('error: ', err)
+        }
     }
 
     render() {
@@ -52,19 +88,30 @@ class Projects extends Component {
             <Fragment>
                     {
                         this.state.loading ? (
-                            <div  className={classes.ProjectsContainer}>
+                            <div className={classes.ProjectsContainer}>
                                 <Loader />
                             </div>
                         ) : (
                             <div>
                                 <ResponsiveDialog
-                                    isOpen={this.state.showJobModal === true}
+                                    isOpen={this.state.showEditModal === true}
                                     onClose={this.toggleClose}>
-                                        <AddProject toggleClose={this.toggleClose} />
+                                        <AddProject
+                                            editMode={this.state.editMode}
+                                            project={this.state.editProject}
+                                            toggleClose={this.toggleClose} />
                                 </ResponsiveDialog>
                                 <div className={classes.ProjectsContainer}>
                                     <Hero heroText={'Projects'} />
-                                    <ProjectList projects={this.state.projects} />
+                                    {
+                                        this.state.projects.length === 0 ? <div className={classes.ProjectsEmpty}><h1> Projects coming soon </h1></div>: (
+                                        <ProjectList
+                                            launchEdit={(id)=> this.onLauchEdit(id)}
+                                            projects={this.state.projects}
+                                            deleteProject={(id) => this.onDeleteProject(id)} />
+                                        )
+                                    }
+                                    
                                     {
                                         this.context.authenticated ?
                                             (

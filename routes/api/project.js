@@ -42,7 +42,27 @@ router.post(
   ],
   projectController.postProject
 );
-router.put('/:id', isAuth, projectController.editProject);
+router.put(
+  '/:id',
+  [
+    isAuth,
+    multer({
+      storage: fileStorage,
+      fileFilter: fileFilter
+    }).single('image'),
+    [
+      check('title', 'title is required')
+        .not()
+        .isEmpty(),
+      check('description', 'description is required')
+        .not()
+        .isEmpty()
+    ] 
+  ],
+  projectController.editProject
+);
+
+router.delete('/:id', projectController.deleteProject)
 
 
 module.exports = router;

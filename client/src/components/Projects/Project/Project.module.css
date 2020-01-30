@@ -32,9 +32,16 @@
     order: 2
 
 }
+.HeaderRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
 .SectionHeader {
     height: 50px;
-    width: 183px;
+    width: 300px;
     color: #000000;
     font-family: Rubik;
     font-size: 21px;
@@ -61,6 +68,7 @@
     object-fit: cover;
     width: 100%;
 }
+
 @media(min-width: 700px) {
     .ProjectContainer {
         height: 500px;
