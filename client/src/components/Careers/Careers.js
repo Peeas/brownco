@@ -19,6 +19,7 @@ class Careers extends Component {
     static contextType = AuthContext;
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.getJobs();
     }
 

@@ -5,6 +5,7 @@ import { Parallax, Background } from 'react-parallax';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 
 const TenantImprovement = () => {
+    window.scrollTo(0, 0);
     return (
         <Fragment>
         <div className={classes.WhatWeDoContainer}>

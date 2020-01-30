@@ -14,6 +14,7 @@ import { withRouter } from 'react-router-dom';
 const Landing = props => {
     const { width } = useWindowDimensions();
     let heroBuilding = width > 500 ? BackgroundImage : smallBackground;
+    window.scrollTo(0, 0);
     const onLearnMore = (path) => {
         props.history.push(path)
     }

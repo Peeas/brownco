@@ -11,6 +11,7 @@ const imgStyle = {
 }
 
 const DemolitionExcavation = () => {
+    window.scrollTo(0, 0);
     return (
         <Fragment>
         <div className={classes.WhatWeDoContainer}>
