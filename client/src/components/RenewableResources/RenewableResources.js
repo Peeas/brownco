@@ -10,6 +10,7 @@ import wasteWaterImg from '../../assets/images/shutterstock_378017860.jpg';
 import solarImg from '../../assets/images/shutterstock_189889886.jpg';
 
 const RenewableResources = () => {
+    window.scrollTo(0, 0);
     return (
     <Fragment>
         <div className={classes.WhatWeDoContainer}>

@@ -15,7 +15,7 @@ const imgStyle = {
 const WhatWeDo = () => {
     const { width } = useWindowDimensions();
     let heroBuilding = width > 500 ? BackgroundImage : smallBackground;
-
+    window.scrollTo(0, 0);
     return (
         <Fragment>
             <div className={classes.WhatWeDoContainer}>

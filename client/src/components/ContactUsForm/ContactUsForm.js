@@ -25,6 +25,7 @@ class ContactUsForm extends Component {
             showSuccess: false,
             showError: false
         }
+        window.scrollTo(0, 0)
     }
     
     handleChange = (event) => {

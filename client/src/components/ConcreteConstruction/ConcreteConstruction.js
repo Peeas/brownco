@@ -5,10 +5,10 @@ import { Parallax, Background } from 'react-parallax';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 
 const ConcreteConstruction = () => {
+    window.scrollTo(0, 0);
     return (
         <Fragment>
             <div className={classes.WhatWeDoContainer}>
-
                     <div className={classes.Top}>
                         <Parallax strength={800}>
                             <Background className={classes.Background}>

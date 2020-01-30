@@ -19,6 +19,7 @@ class Projects extends Component {
     }
     static contextType = authContext;
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.getProjects();
     }
 

@@ -4,7 +4,7 @@ import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 
 const AboutUs = () => {
-
+    window.scrollTo(0, 0);
     return (
         <Fragment>
                 <section className={classes.Top}>
