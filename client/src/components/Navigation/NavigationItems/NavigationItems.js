@@ -15,6 +15,7 @@ const NavigationItems = (props) => {
             { width > 949 ?
             <ul className={classes.NavigationItems}>
                 <SimpleMenu /> 
+                <NavigationItem link="/projects"><span className={classes.LinkName}>Projects</span></NavigationItem>
                 <NavigationItem link="/aboutus"><span className={classes.LinkName}>about us</span></NavigationItem>
                 <NavigationItem link="/careers"><span className={classes.LinkName}>careers</span></NavigationItem>
                 <NavigationItem link="/contactus"><span className={classes.LinkName}>contact</span></NavigationItem>

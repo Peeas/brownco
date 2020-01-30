@@ -32,7 +32,7 @@ class Careers extends Component {
                     'Content-Type': 'application/json'
                 }
              })
-           
+
             let data = res.data
             let jobs = [];
             data.forEach(job => jobs.push(job));
@@ -74,7 +74,6 @@ class Careers extends Component {
         let posts;
 
         let jobs = this.state.jobs;
-        
 
         if (jobs.length > 0) {
             posts = (
@@ -120,14 +119,13 @@ class Careers extends Component {
             <Fragment>
                 <ResponsiveDialog
                     isOpen={this.state.showPost === true}
-                    onClose={this.toggleClose}
-                    >
+                    onClose={this.toggleClose}>
                         <NewJobPost addJob={this.handleNewJob} toggleClose={this.toggleClose} />
                 </ResponsiveDialog>
 
                 <div className={classes.CareersContainer}>
                     <div className={classes.CareersHero}>
-                            <div className={classes.CareersTitle}>Available Positions</div>
+                        <div className={classes.CareersTitle}>Available Positions</div>
                     </div>
                     {this.state.loading ? (
                         <div className={classes.Spinner}>
@@ -144,7 +142,7 @@ class Careers extends Component {
                         + Add Job Post
                     </Button> : ''}
                     </div>
-    
+                    
                 </div>
             </Fragment>
 

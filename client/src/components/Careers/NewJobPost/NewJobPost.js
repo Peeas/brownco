@@ -3,16 +3,19 @@ import classes from './NewJobPost.module.css';
 import TextField from '@material-ui/core/TextField';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class NewJobPost extends Component {
     state = {
         jobPostForm: {
             title: '',
             responsibilities: '',
-            requirements: ['requirement 1'],
+            requirements: ['requirement'],
         },
         isEdit: false
-
+        
     }
 
     componentDidMount() {
@@ -84,6 +87,25 @@ class NewJobPost extends Component {
             jobPostForm: updatedForm
         })
     } 
+    handleMouseDownRequirement = event => {
+        event.preventDefault();
+    };
+    onRemoveRequirement = (e, requirement) => {
+        e.preventDefault();
+        const updateForm = {
+            ...this.state.jobPostForm
+        }
+        let requirementsToUpdate = updateForm['requirements'].slice();
+        if (requirementsToUpdate.length === 1) {
+            alert('must have at least one requirement');
+            return;
+        }
+        requirementsToUpdate.splice(requirementsToUpdate.indexOf(requirement), 1);
+        updateForm['requirements'] = requirementsToUpdate;
+        this.setState({
+            jobPostForm: updateForm
+        })
+    }
     render() {
         return (
         <div className={classes.AuthContainer}>
@@ -95,7 +117,7 @@ class NewJobPost extends Component {
                         <TextField
                             id="title"
                             name="title"
-                            label="job Title"
+                            label="Job Title"
                             type="text"
                             value={this.state.jobPostForm.title}
                             className={classes.textField}
@@ -123,7 +145,7 @@ class NewJobPost extends Component {
                         return (
                             <div key={i}>
                                 <TextField
-                                    id="requirements{i}"
+                                    id={'requirements' + i}
                                     name="requirements"
                                     label="Requirements"
                                     type="requirements"
@@ -132,7 +154,9 @@ class NewJobPost extends Component {
                                     onChange={(event)=> this.handleChange(event, i)}
                                     margin="normal"
                                     variant="filled"
-                                 
+                                    InputProps={{
+                                        endAdornment: <InputAdornment position="end"><IconButton onMouseDown={(e) => this.handleMouseDownRequirement(e)} onClick={(e)=> this.onRemoveRequirement(e, requirment)}><DeleteIcon></DeleteIcon></IconButton></InputAdornment>,
+                                      }}
                                 />
                             </div>
                         )

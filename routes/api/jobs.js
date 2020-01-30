@@ -3,7 +3,8 @@ const router = express.Router();
 const isAuth = require('../../middleware/is-auth');
 // job model
 const Job = require('../../models/Job');
-const jobsController = require('../../controllers/jobs')
+const jobsController = require('../../controllers/jobs');
+const multer = require('multer');
 const {
   check,
   body
@@ -11,7 +12,7 @@ const {
 
 router.get('/', jobsController.getJobs);
 
-router.post('/resume/:id', jobsController.postResume);
+router.post('/resume/:id', multer().single('file'),jobsController.postResume);
 
 
 router.post('/', [isAuth, [
