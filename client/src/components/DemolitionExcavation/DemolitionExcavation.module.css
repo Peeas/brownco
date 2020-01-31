@@ -1,6 +1,7 @@
 .WhatWeDoContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 71.99px;
 }
 
 .Top {
@@ -98,10 +99,16 @@
         height: 300px;
         padding: 15px;
     }
+    .titleContainer div {
+
+        line-height: 24px;
+    }
 
 }
 @media(min-width: 699px) {
     .DesignTitle {
         width: 549px;
     }
+
+    
 }

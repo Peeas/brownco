@@ -14,6 +14,7 @@
 .heroImageContainer {
     min-height: 528px;
     background-color: #A5A5A5;    
+    
 }
 .ParallaxDiv {
     width: 100%;
@@ -21,7 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
 }
 .HeroContentTitle {
     color: rgba(255, 255, 255, 0.87);
@@ -30,4 +31,34 @@
     font-style: normal;
     font-weight: 300;
     line-height: 71px;
+    text-align: center;
+}
+.HeroContentText {
+    height: 24px;
+    opacity: 0.87;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 16px;
+    letter-spacing: 3px;
+    line-height: 24px;
+    text-align: center;
+}
+@media(max-width: 400px) {
+  
+    .HeroContentTitle {
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .HeroContentText {
+        height: 24px;
+        opacity: 0.87;
+        color: #FFFFFF;
+        font-family: Rubik;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
 }
