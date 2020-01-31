@@ -1,37 +1,7 @@
 .WhatWeDoContainer {
     display: flex;
     flex-direction: column;
-}
-
-.Top {
-    display: flex;
-    top: 0;
-    left: 0;
-
-}
-.Background {
-    background-image: url(../../assets/images/img-concrete.jpg);
-    background-size: cover;
-    width: 100vw;
-}
-.HomepageHero {
-    margin-top: 4vh;
-    text-align: center;
-    width: 100vw;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.HeroContentTitle {
-    height: 71px;
-    color: rgba(255, 255, 255, 0.87);
-    font-family: Rubik;
-    font-size: 60px;
-    font-weight: 300;
+    margin-top: 71.99px;
 }
 
 .titleContainer {

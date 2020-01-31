@@ -1,45 +1,11 @@
+.LandingContainer {
+    margin-top: 71.99px;
+}
 .Top {
     display: flex;
     top: 0;
     left: 0;
     width: 100vw;
-}
-
-.HeroImage {
-    width: 115vw;
-    margin-top: 260px;
-}
-
-.HomepageHero {
-    margin-top: 7vh;
-    text-align: center;
-    width: 100vw;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.HeroContentTitle {
-    color: rgba(255, 255, 255, 0.87);
-    font-family: Rubik;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 71px;
-    text-align: center;
-
-}
-
-.HeroContentText {
-    height: 24px;
-    opacity: 0.87;
-    color: #FFFFFF;
-    font-family: Rubik;
-    font-size: 16px;
-    letter-spacing: 3px;
-    line-height: 24px;
-    text-align: center;
 }
 .LandingFooterPanel {
     height: 298px;
@@ -76,7 +42,6 @@
 }
 
 .Concrete {
-    height: 465px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -94,7 +59,7 @@
 
 .ConcreteCopyContainer {
     width: 100%;
-    height: 50%;
+    height: 400px;
     display: flex;
 
 }
@@ -119,14 +84,7 @@
     order: 1;
 }
 
-.Section2CopyContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    order: 1
-}
+
 
 .ConcreteCopyContainer {
     display: flex;
@@ -137,7 +95,10 @@
     order: 2
 }
 
+
 .Section2CopyContainer {
+    width: 50%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -185,19 +146,9 @@
     margin-top: 20px;
     cursor: pointer;
 }
-@media(min-width: 1200px) {
-    .HeroImage {
-        margin-top: 100px;
-    }
-}
+
 @media(min-width: 700px) {
-    .Top {
-        height: 60vh;
-    }
-    .HomepageHero {
-        margin-top: 30vh;
-        height: 100%;
-    }
+
     .Concrete {
         height: 500px;
         display: flex;
@@ -209,7 +160,8 @@
         order: 1;
         width: 50%;
         display: flex;
-        height: 100%;
+        height: 500px;
+
     }
 
     .SectionImgContainer {
@@ -223,15 +175,10 @@
         order: 1;
         width: 50%;
         display: flex;
-        height: 100%;
+        height: 500px;
     }
 
-    .Section2CopyContainer {
-        order: 2;
-        width: 50%;
-        display: flex;
-        height: 100%;
-    }
+
 
     .LearnMore {
         margin-top: 40px;
@@ -247,9 +194,7 @@
     .MobilePadding {
         margin: 20px;
     }
-    .HeroImage {
-        width: 150vw;
-    }
+
 }
 
 @media(max-width: 400px) {

@@ -1,6 +1,7 @@
 .WhatWeDoContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 71px;
 }
 
 .Top {

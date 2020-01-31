@@ -1,25 +1,19 @@
 import React , { Fragment } from 'react'
 import classes from './ConcreteConstruction.module.css';
 import ContactUs from '../ContactUs/ContactUs';
-import { Parallax, Background } from 'react-parallax';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
+import Hero from '../UI/Hero/Hero';
+import concreteImage from '../../assets/images/img-concrete.jpg';
 
 const ConcreteConstruction = () => {
     window.scrollTo(0, 0);
     return (
         <Fragment>
             <div className={classes.WhatWeDoContainer}>
-                    <div className={classes.Top}>
-                        <Parallax strength={800}>
-                            <Background className={classes.Background}>
-                            </Background>
-                            <div className={classes.HomepageHero}>
-                                <div className={classes.HeroContentTitle}>
-                                    Concrete Construction
-                                </div>
-                            </div>
-                        </Parallax>
-                    </div>
+                <Hero
+                    bgImageAlt={'concrete-construction-bg-image-brownco'}
+                    heroText={'Concrete Construction'}
+                    heroImage={concreteImage}/>
                     <div className={classes.titleContainer}>
                         <div>
                         Brownco Construction Company Inc. performs new concrete projects as well

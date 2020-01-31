@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
+import React from 'react';
 import classes from './Landing.module.css'
 import concreteImg from '../../assets/images/RectangleCopy7@2x.jpg';
 import DemoImg from '../../assets/images/Demolition@2x.jpg';
 import WindEnergy from '../../assets/images/WindEnergy.jpg';
 import TenantImprovement from '../../assets/images/BackgroundImage.png';
-import { Parallax, Background } from 'react-parallax';
 import StructuralSteel from '../../assets/images/Rectangl6.png';
 import BackgroundImage from '../../assets/images/Index@3x.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
 import smallBackground from '../../assets/images/Index.jpg';
 import ContactUs from '../ContactUs/ContactUs';
 import { withRouter } from 'react-router-dom';
+import Hero from '../UI/Hero/Hero';
 const Landing = props => {
     const { width } = useWindowDimensions();
     let heroBuilding = width > 500 ? BackgroundImage : smallBackground;
@@ -19,31 +19,15 @@ const Landing = props => {
         props.history.push(path)
     }
     return (
-        <Fragment>
+        <div className={classes.LandingContainer}>
             <section>
                 <div className={classes.Top}>
-
-                    <Parallax strength={600}>
-                        <Background className={classes.heroImageContainer}>
-                            <img className={classes.HeroImage} src={heroBuilding} alt=""/>
-                        </Background>
-                        <div className={classes.HomepageHero}>
-                            <div className={classes.HeroContentText}>
-                                Brownco Construction Company Inc.
-                            </div>
-                            <div className={classes.HeroContentTitle}>Building With Purpose</div>
-
-                            <div className={classes.HeroButton}>
-
-                            </div>
-                            <div className={classes.CenterRow}>
-                                <div className={classes.HeroContainer}>
-                                
-                                </div>
-                            </div>
-
-                        </div>
-                    </Parallax>
+                    <Hero
+                        bgImageAlt={'landing-bg-image-brownco'}
+                        heroImage={heroBuilding}
+                        isLanding={true}
+                        subText={'Brownco Construction Company Inc.'}
+                        heroText={'Building With Purpose'}/>
                 </div>
 
             </section>
@@ -144,7 +128,7 @@ const Landing = props => {
 
             <ContactUs></ContactUs>
             
-        </Fragment>
+        </div>
     )
 }
 export default withRouter(Landing);

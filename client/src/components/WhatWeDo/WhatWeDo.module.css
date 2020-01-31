@@ -1,15 +1,14 @@
 .WhatWeDoContainer {
     display: flex;
     flex-direction: column;
+    margin-top: 71.99px;
 }
-
 .Top {
     display: flex;
     top: 0;
     left: 0;
 
 }
-
 .HomepageHero {
     margin-top: 4vh;
     text-align: center;
@@ -20,7 +19,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .HeroContentTitle {
     height: 71px;
     color: rgba(255, 255, 255, 0.87);
@@ -28,7 +26,6 @@
     font-size: 60px;
     font-weight: 300;
 }
-
 .titleContainer {
     height: 250px;
     margin: 0 auto;
@@ -36,7 +33,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 .titleContainer div {
     max-width: 618px;
     opacity: 0.54;
@@ -45,7 +41,6 @@
     font-size: 14px;
     line-height: 28px;
 }
-
 .SolutionsContainer {
     display: flex;
     flex-direction: column;
@@ -53,11 +48,9 @@
     height: 295px;
     background-color: #EAEAEA;
 }
-
 .SolutionsContainer div {
     margin: 0 auto;
 }
-
 .SolutionsContainer .StructuralSub {
     height: 17px;
     opacity: 0.87;
@@ -69,12 +62,10 @@
     letter-spacing: 3px;
     text-align: center;
 }
-
 .SolutionsColumns {
     display: flex;
     flex-direction: row;
 }
-
 .SolutionsColumns div {
     height: 120px;
     width: 220px;
@@ -85,17 +76,14 @@
     line-height: 30px;
     text-align: center;
 }
-
 @media(max-width: 700px) {
     .SolutionsColumns {
         display: flex;
         flex-direction: column;
     }
-
     .SolutionsContainer {
         height: 600px;
     }
-
     .titleContainer {
         height: 300px;
         padding: 15px;

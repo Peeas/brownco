@@ -103,7 +103,9 @@ class Projects extends Component {
                                             toggleClose={this.toggleClose} />
                                 </ResponsiveDialog>
                                 <div className={classes.ProjectsContainer}>
-                                    <Hero heroText={'Projects'} />
+                                    <Hero
+                                        bgImageAlt={'projects-bg-image-brownco'}
+                                        heroText={'Projects'} />
                                     {
                                         this.state.projects.length === 0 ? <div className={classes.ProjectsEmpty}><h1> Projects coming soon </h1></div>: (
                                         <ProjectList

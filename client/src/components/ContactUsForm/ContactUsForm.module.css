@@ -1,4 +1,8 @@
-.ContactUsContainer,
+.ContactUsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 71.99px;
+}
 .Notification {
     display: flex;
     flex-direction: column;
@@ -13,11 +17,12 @@
 }
 
 .ContactUsForm {
-    padding-top: 150px;
-    max-width: 700px;
-    margin: 0 auto;
-
-
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
 }
 
 .ContactTitle {
@@ -35,7 +40,7 @@
     font-family: Rubik;
     font-size: 16px;
     line-height: 28px;
-    margin-top: 24px;
+    margin: 24px;
 }
 .FormContainer {
     display: flex;
@@ -75,10 +80,7 @@
     .longField {
         max-width: 300px;
     }
-    .ContactUsForm {
-        padding-top: 100px;
-        padding-left: 24px;
-    }
+
     .BtnRow  {
         width: 300px;
 
