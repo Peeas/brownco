@@ -97,7 +97,6 @@
 
 
 .Section2CopyContainer {
-    width: 50%;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -164,6 +163,15 @@
 
     }
 
+    .Section2CopyContainer {
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        width: 50%;
+    }
     .SectionImgContainer {
         order: 2;
         width: 50%;
