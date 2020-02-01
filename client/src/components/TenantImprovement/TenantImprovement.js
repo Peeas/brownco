@@ -4,11 +4,18 @@ import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import tenantImprovementImage from '../../assets/images/tenant.jpg';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 const TenantImprovement = () => {
   window.scrollTo(0, 0);
   return (
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
+        <Meta
+            title={'Tenant Improvement | Brownco'}
+            description={
+              "New offices, bathrooms, conference room - Call Brownco Construction Co Inc. for all your tenant improvements. Let's talk project!"
+            }
+          />
         <Hero
           bgImageAlt={'renant-improvement-bg-image-brownco'}
           heroImage={tenantImprovementImage}

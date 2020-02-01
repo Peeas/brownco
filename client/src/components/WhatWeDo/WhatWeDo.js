@@ -6,6 +6,7 @@ import smallBackground from '../../assets/images/Index.jpg';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 
 const WhatWeDo = () => {
   const { width } = useWindowDimensions();
@@ -14,10 +15,17 @@ const WhatWeDo = () => {
   return (
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
+        <Meta
+          title={'Structural Steel | Brownco'}
+          description={
+            'Brownco Construction Company Inc. fabricated and installed employee protection guardrail. Need guardrails, safety bollards, ADA compliance?'
+          }
+        />
         <Hero
           bgImageAlt={'structural-steel-bg-image-brownco'}
           heroImage={heroBuilding}
-          heroText={'Structural Steel'} />
+          heroText={'Structural Steel'}
+        />
         <div className={classes.titleContainer}>
           <div>
             Brownco Construction Company Inc.'s Structural Steel Team is ready

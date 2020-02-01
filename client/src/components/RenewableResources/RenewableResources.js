@@ -10,6 +10,7 @@ import solarImg from '../../assets/images/shutterstock_189889886.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
 import Hero from '../UI/Hero/Hero';
 import renewableResourcesHeroImage from '../../assets/images/Background-renew.png';
+import Meta from '../Meta/Meta';
 
 const RenewableResources = () => {
   window.scrollTo(0, 0);
@@ -17,10 +18,17 @@ const RenewableResources = () => {
   return (
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
+        <Meta
+          title={'Renewable Energy | Brownco'}
+          description={
+            "For over 20 years Brownco has been providing renewable energy solutions for clients. Wanna talk about it, we are green to consult with you today!"
+          }
+        />
         <Hero
           bgImageAlt={'renewable-resources-bg-image-brownco'}
           heroImage={renewableResourcesHeroImage}
-          heroText={'Renewable Energy Resources'} />
+          heroText={'Renewable Energy Resources'}
+        />
         <div className={classes.titleContainer}>
           <div>
             Renewable energy use is on the rise around the globe. Since the
@@ -32,10 +40,14 @@ const RenewableResources = () => {
           </div>
         </div>
         <section className={classes.Concrete}>
-          <div style={{order: width > 700 ? '2' : '1'}} className={classes.SectionImgContainer}>
+          <div
+            style={{ order: width > 700 ? '2' : '1' }}
+            className={classes.SectionImgContainer}>
             <img src={windEnergy} alt='wind-energy' />
           </div>
-          <div style={{order: width > 700 ? '1' : '2'}}  className={classes.ConcreteCopyContainer}>
+          <div
+            style={{ order: width > 700 ? '1' : '2' }}
+            className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>WIND ENERGY</div>
@@ -43,18 +55,24 @@ const RenewableResources = () => {
                 <li>1 Unit to 100+ Units</li>
                 <li>Design and equipment based on the location</li>
                 <li>Wind generated to size turbines to the site</li>
-                <li>Selection and installation of turbines, electrical and control mechanisms</li>
+                <li>
+                  Selection and installation of turbines, electrical and control
+                  mechanisms
+                </li>
                 <li>Certified Installer of wind turbines</li>
-                <li>Won the most aggressive Renewable Energy Project - One MegaWatt Wind Turbine</li>
+                <li>
+                  Won the most aggressive Renewable Energy Project - One
+                  MegaWatt Wind Turbine
+                </li>
               </ul>
             </div>
           </div>
         </section>
         <section className={classes.Concrete}>
-          <div style={{order: '1'}} className={classes.SectionImgContainer}>
+          <div style={{ order: '1' }} className={classes.SectionImgContainer}>
             <img src={hydroImg} alt='hydrogen' />
           </div>
-          <div style={{order:'2'}} className={classes.ConcreteCopyContainer}>
+          <div style={{ order: '2' }} className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>
@@ -75,11 +93,15 @@ const RenewableResources = () => {
         </section>
 
         <section className={classes.Concrete}>
-          <div style={{order: width > 700 ? '2' : '1'}}   className={classes.SectionImgContainer}>
+          <div
+            style={{ order: width > 700 ? '2' : '1' }}
+            className={classes.SectionImgContainer}>
             <img src={bioImg} alt='biomass' />
           </div>
 
-          <div style={{order: width > 700 ? '1' : '2'}}   className={classes.ConcreteCopyContainer}>
+          <div
+            style={{ order: width > 700 ? '1' : '2' }}
+            className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>
@@ -112,11 +134,11 @@ const RenewableResources = () => {
         </section>
 
         <section className={classes.Concrete}>
-          <div style={{order: '1' }} className={classes.SectionImgContainer}>
+          <div style={{ order: '1' }} className={classes.SectionImgContainer}>
             <img src={wasteWaterImg} alt='wastewater' />
           </div>
 
-          <div style={{order:'2'}}  className={classes.ConcreteCopyContainer}>
+          <div style={{ order: '2' }} className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>Waste Water</div>
@@ -135,11 +157,15 @@ const RenewableResources = () => {
         </section>
 
         <section className={classes.Concrete}>
-          <div style={{order: width > 700 ? '2' : '1'}} className={classes.SectionImgContainer}>
+          <div
+            style={{ order: width > 700 ? '2' : '1' }}
+            className={classes.SectionImgContainer}>
             <img src={solarImg} alt='solar' />
           </div>
 
-          <div style={{order: width > 700 ? '1' : '2'}} className={classes.ConcreteCopyContainer}>
+          <div
+            style={{ order: width > 700 ? '1' : '2' }}
+            className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>Photovoltaic / Solar</div>

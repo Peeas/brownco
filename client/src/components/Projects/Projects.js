@@ -9,7 +9,8 @@ import ProjectList from './ProjectList/ProjectList';
 import axios from 'axios';
 import Loader from '../UI/Loader/Loader';
 import AddPage from './AddPage/AddPage';
-
+import Meta from '../Meta/Meta';
+import ContactUs from '../ContactUs/ContactUs'
 class Projects extends Component {
   state = {
     page: null,
@@ -49,12 +50,11 @@ class Projects extends Component {
     window.scrollTo(0, 0);
     const { id } = this.props.match.params;
     if (id) {
-        this.setState({ id: id });
-        this.getPage(id);
+      this.setState({ id: id });
+      this.getPage(id);
     } else {
-        this.setState({ loading: false });
+      this.setState({ loading: false });
     }
-
   };
 
   getPage = async id => {
@@ -138,13 +138,13 @@ class Projects extends Component {
     }
   };
 
-  deletePage = async (id) => {
+  deletePage = async id => {
     const token = localStorage.getItem('token');
     try {
       const res = await axios.delete(`/api/pages/${id}`, {
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: `${token}`
+          'Content-Type': 'application/json',
+          Authorization: `${token}`
         }
       });
       if (res && res.status === 200) {
@@ -188,6 +188,10 @@ class Projects extends Component {
               />
             </ResponsiveDialog>
             <div className={classes.ProjectsContainer}>
+              <Meta
+                title={this.state.page.meta && this.state.page.meta.title ? this.state.page.meta.title + ' | Brownco' : 'Projects | Brownco'}
+                description={this.state.page.meta && this.state.page.meta.description ? this.state.page.meta.description : ''}
+              />
               <Hero
                 projectPage={this.state.page !== null}
                 onEditPage={() => this.onLaunchAddPage(true)}
@@ -210,9 +214,13 @@ class Projects extends Component {
 
               {this.context.authenticated ? (
                 <div className={classes.AddProjectContainer}>
-                  {this.state.page !== null ? <Button onClick={this.toggleClose} color='primary'>
-                    + Add Project Row
-                  </Button> : ''}
+                  {this.state.page !== null ? (
+                    <Button onClick={this.toggleClose} color='primary'>
+                      + Add Project Row
+                    </Button>
+                  ) : (
+                    ''
+                  )}
                   <Button
                     onClick={() => this.onLaunchAddPage(false)}
                     variant='contained'
@@ -223,6 +231,7 @@ class Projects extends Component {
               ) : (
                 ''
               )}
+              <ContactUs/>
             </div>
           </div>
         )}
