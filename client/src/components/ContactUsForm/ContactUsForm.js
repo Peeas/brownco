@@ -9,6 +9,7 @@ import FilledInput from '@material-ui/core/FilledInput';
 import axios from 'axios';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 
 class ContactUsForm extends Component {
   constructor(props) {
@@ -88,6 +89,12 @@ class ContactUsForm extends Component {
     }
     return (
       <div className={classes.ContactUsContainer}>
+        <Meta
+          title={'Contact | Brownco'}
+          description={
+            'Building Damage? No problem call Brownco Construction Company, Inc. for your emergency construction needs.'
+          }
+        />
         <ResponsiveDialog
           isOpen={
             this.state.showSuccess === true || this.state.showError === true
@@ -98,12 +105,13 @@ class ContactUsForm extends Component {
         </ResponsiveDialog>
         <Hero
           bgImageAlt={'contact-us-bg-image-brownco'}
-          heroText={'Contact Us'} />
+          heroText={'Contact Us'}
+        />
 
         <div className={classes.ContactUsForm}>
           <div className={classes.ContactSub}>
             <div>
-            Please fill out the form below, and we will respond promptly!
+              Please fill out the form below, and we will respond promptly!
             </div>
           </div>
           <div>

@@ -4,16 +4,24 @@ import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import demoHero from '../../assets/images/img-demolition.jpg';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 
 const DemolitionExcavation = () => {
   window.scrollTo(0, 0);
   return (
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
+        <Meta
+          title={'Demolition and Excavation | Brownco'}
+          description={
+            "Brownco loves to tear buildings up, call today for your demolition and excavation proposal."
+          }
+        />
         <Hero
           bgImageAlt={'demolition-excavation-bg-image-brownco'}
           heroImage={demoHero}
-          heroText={'Demolition + Excavation'} />
+          heroText={'Demolition + Excavation'}
+        />
         <div className={classes.titleContainer}>
           <div>
             From concrete slabs, steel structures to buildings Brownco

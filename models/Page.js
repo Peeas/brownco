@@ -11,6 +11,16 @@ const PageSchema = new Schema({
         type: String, 
         required: true
     },
+    meta: {
+        title: {
+            type: String, 
+            required: true
+        },
+        description: {
+            type: String, 
+            required: true
+        },
+    },
     projects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
     date: {
         type: Date,

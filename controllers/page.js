@@ -29,7 +29,7 @@ exports.getPage = (req, res, next) => {
 }
 
 exports.postPage = async(req, res, next) => {
-    const { name } = req.body;
+    const { name, metaTitle, metaDescription } = req.body;
     const image = req.file;
     if (!image) {
         return res.status(422).json({errors: [{msg: 'Failed to store Image'}]});
@@ -42,6 +42,10 @@ exports.postPage = async(req, res, next) => {
         const page = new Page({
             name: name,
             file: image.path,
+            meta: {
+                title: metaTitle,
+                description: metaDescription
+            }
         });
         const newPage = await page.save();
         res.json(newPage)
@@ -53,7 +57,7 @@ exports.postPage = async(req, res, next) => {
 }
 
 exports.editPage = async(req, res, next) => {
-    const { name } = req.body;
+    const { name, metaTitle, metaDescription} = req.body;
     const image = req.file;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -65,6 +69,8 @@ exports.editPage = async(req, res, next) => {
             return res.status(404).json({ msg: 'page not found'});
         }
         page.name = name;
+        page.meta.title = metaTitle;
+        page.meta.description = metaDescription;
         if (image) {
             fileHelper.deleteFile(page.file);
             page.file = image.path;

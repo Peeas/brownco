@@ -8,6 +8,7 @@ import JobPost from './JobPost/JobPost';
 import NewJobPost from './NewJobPost/NewJobPost';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 
 class Careers extends Component {
   state = {
@@ -105,6 +106,7 @@ class Careers extends Component {
     }
     return (
       <div className={classes.CarrersContainerpage}>
+        <Meta title={'Careers | Brownco'} description={"It's not easy work but it is rewarding. We are growing and looking for hardworking team players with grit! Submit a resume at Brownco Construction Co. Inc.’s website."} />
         <ResponsiveDialog
           isOpen={this.state.showPost === true}
           onClose={this.toggleClose}>

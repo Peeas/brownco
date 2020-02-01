@@ -4,10 +4,12 @@ import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
 import AboutUsHeroImage from '../../assets/images/Hero@2x.png';
 import Hero from '../UI/Hero/Hero';
+import Meta from '../Meta/Meta';
 const AboutUs = () => {
   window.scrollTo(0, 0);
   return (
     <div className={classes.AboutUsContainer}>
+      <Meta title={'About Us | Brownco'} description={"Think Safety Work Safely, The Brownco Way. Building with Purpose."} />
       <Hero
         bgImageAlt={'about-us-bg-image-brownco'}
         heroImage={AboutUsHeroImage}
