@@ -10,7 +10,7 @@ import axios from 'axios';
 import Loader from '../UI/Loader/Loader';
 import AddPage from './AddPage/AddPage';
 import Meta from '../Meta/Meta';
-
+import ContactUs from '../ContactUs/ContactUs'
 class Projects extends Component {
   state = {
     page: null,
@@ -231,6 +231,7 @@ class Projects extends Component {
               ) : (
                 ''
               )}
+              <ContactUs/>
             </div>
           </div>
         )}
