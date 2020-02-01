@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './Hero.module.css'
 import { Parallax } from 'react-parallax';
-import defaultImg from '../../../assets/images/grey-default.png'
+import defaultImg from '../../../assets/images/grey-default.png';
+import Fab from '@material-ui/core/Fab';
+import EditIcon from '@material-ui/icons/Edit';
 const style =  {
     backgroundSize: "cover",
     height: '800px',
@@ -19,7 +21,13 @@ const Hero = props => {
                     <div className={classes.ParallaxDiv}>
                         { props.isLanding ? <div className={classes.HeroContentText}>{props.subText}</div> : '' }
                         <div className={classes.HeroContentTitle}>
-                            {props.heroText}
+                            {props.heroText} <span>
+                                {props.projectPage && props.authenticated ? (
+                                    <Fab color="primary" onClick={props.onEditPage} aria-label="edit">
+                                        <EditIcon  />
+                                    </Fab>
+                                ) : '' }
+                            </span>
                         </div>
                     </div>
             </Parallax>

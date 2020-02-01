@@ -31,7 +31,7 @@ app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/jobs', require('./routes/api/jobs'));
 app.use('/api/contact', require('./routes/api/contact'));
 app.use('/api/project', require('./routes/api/project'));
-
+app.use('/api/pages', require('./routes/api/pages'));
 
 // serve static assets in production
     app.use('/images', express.static(path.join(__dirname, 'images')))

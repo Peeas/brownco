@@ -77,9 +77,14 @@ class AddProject extends Component {
       if (!this.state.isEdit || (this.state.isEdit && this.state.addProjectForm.image !== '')) {
         project.append('image', this.state.addProjectForm.image);
       }
+      if (!this.state.isEdit && this.state.addProjectForm.image === '') {
+        alert('please add an image');
+        return;
+      }
       project.append('title', this.state.addProjectForm.title);
       project.append('description', this.state.addProjectForm.description);
       project.append('imagePosition', this.state.addProjectForm.imagePosition);
+      project.append('pageId', this.props.page._id)
       const config = {
         headers: {
           'Content-Type': 'multipart/form-data',
