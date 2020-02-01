@@ -1,0 +1,27 @@
+.Whatwedo {
+    letter-spacing: 0.92px;
+	line-height: 13px;
+    text-align: center;
+    margin: 10px 0;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 14px;
+	width: 104px;
+	color: rgba(0,0,0,0.87);
+	font-family: Rubik;
+	font-size: 11px;
+	letter-spacing: 0.92px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.Whatwedo:hover {
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
+}
+span:hover {
+    color: #F86800;
+    transition-timing-function: ease;
+    transition: .5s;
+}

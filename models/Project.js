@@ -22,7 +22,12 @@ const ProjectSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    pageId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Page',
+        required: true
+    }
 
 });
-  
-  module.exports = Project = mongoose.model('project', ProjectSchema)
+
+module.exports = mongoose.model('Project', ProjectSchema)

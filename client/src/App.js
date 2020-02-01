@@ -20,32 +20,34 @@ import Projects from './components/Projects/Projects';
 
 class App extends Component {
   state = {
-    authenticated: false
+    authenticated: false,
+    pages: []
   }
   componentDidMount() {
+    this.getPages();
     const token = localStorage.getItem('token');
     if (token) {
       this.setState({ authenticated: true })
     }
   }
   loginHandler = async (user) => {
-        try {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+    try {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
             }
-            const body = JSON.stringify(user);
-            const res = await axios.post('/api/auth/login', body, config);
-            if (res && res.data && res.data.token) {
-              localStorage.setItem('token', res.data.token);
-              this.setState({
-                authenticated: true
-              })
-            }
-        } catch(err) {
-          console.error(err);
         }
+        const body = JSON.stringify(user);
+        const res = await axios.post('/api/auth/login', body, config);
+        if (res && res.data && res.data.token) {
+          localStorage.setItem('token', res.data.token);
+          this.setState({
+            authenticated: true
+          })
+        }
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   logoutHandler = () => {
@@ -55,11 +57,28 @@ class App extends Component {
     })
   }
 
+  getPages = async() => {
+    try {
+      const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      } 
+      const res = await axios.get('/api/pages/', config);
+      if (res && res.data) {
+        this.setState({pages: res.data});
+        return res.data;
+      }
+    } catch(err) {
+      console.error(err)
+    }
+  }
+
   render() {
     let routes = (
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/projects" exact component={Projects} />
+        <Route path="/projects/:id" exact component={Projects} />
         <Route path="/aboutus" exact component={AboutUs} />
         <Route path="/structural-steel" exact component={WhatWeDo} />
         <Route path="/concrete-construction" exact component={ConcreteConstruction} />
@@ -68,24 +87,26 @@ class App extends Component {
         <Route path="/tenant-improvement" exact component={TenantImprovement} />
         <Route path="/contactus" exact component={ContactUsForm} />
         <Route path="/careers" exact component={Careers} />
-  
+
         <Redirect  to="/" />
       </Switch>
   
     );
     return (
       <ParallaxProvider>
-        <AuthContext.Provider value={{
-          authenticated: this.state.authenticated,
-          login: (user) => this.loginHandler(user),
-          logout: () => this.logoutHandler()
-          }}>
-            <MuiThemeProvider theme={theme}>
-              <Layout>
-                {routes}
-              </Layout>
-            </MuiThemeProvider>
-        </AuthContext.Provider>
+          <AuthContext.Provider value={{
+            authenticated: this.state.authenticated,
+            login: (user) => this.loginHandler(user),
+            logout: () => this.logoutHandler(),
+            pages: this.state.pages,
+            getPages: () => this.getPages()
+            }}>
+              <MuiThemeProvider theme={theme}>
+                <Layout>
+                  {routes}
+                </Layout>
+              </MuiThemeProvider>
+          </AuthContext.Provider>
       </ParallaxProvider>
 
     );

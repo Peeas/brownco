@@ -21,7 +21,7 @@ const SimpleMenu = props => {
         <div className={classes.Whatwedo} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             WHAT WE DO
         </div>
-
+        
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

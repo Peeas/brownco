@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+
 const isAuth = require('../../middleware/is-auth');
 const projectController = require('../../controllers/project');
+const Project = require('../../models/Project');
 const multer = require('multer');
 const { check } = require('express-validator');
 const DIR = './images';
@@ -37,7 +39,8 @@ router.post(
         .isEmpty(),
       check('description', 'description is required')
         .not()
-        .isEmpty()
+        .isEmpty(),
+      check('pageId', 'page is required').not().isEmpty()
     ]
   ],
   projectController.postProject
@@ -62,7 +65,7 @@ router.put(
   projectController.editProject
 );
 
-router.delete('/:id', projectController.deleteProject)
+router.delete('/:id/page/:pageId', projectController.deleteProject)
 
 
 module.exports = router;

@@ -24,14 +24,28 @@ const useStyles = makeStyles(theme => ({
 const NestedList = props => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [projOpen, setProjOpen] = React.useState(false);
   const authContext = useContext(AuthContext);
-
+  
   const handleClick = () => {
+    if(projOpen) {
+      handleProjClick();
+    }
     setOpen(!open);
   };
   const handleNav = path => {
     props.history.push(path);
   };
+  
+  const handleProjNav = page => {
+    props.history.push(`/projects/${page._id}`);
+  };
+  const handleProjClick = () => {
+    if (open) {
+      handleClick();
+    }
+    setProjOpen(!projOpen)
+  }
   return (
     <List
       component='nav'
@@ -88,9 +102,29 @@ const NestedList = props => {
           </ListItem>
         </List>
       </Collapse>
-      <ListItem onClick={() => handleNav('/projects')} button>
-        <ListItemText primary='Projects' />
-      </ListItem>
+      { authContext.pages.length > 0 ? (
+        <div>
+          <ListItem button onClick={handleProjClick}>
+            <ListItemText primary='Projects' />
+            {projOpen ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse in={projOpen} timeout='auto' unmountOnExit>
+            <List component='div' disablePadding>
+              {authContext.pages.map(page => (
+                <ListItem
+                  key={page._id}
+                  onClick={() => handleProjNav(page)}
+                  button
+                  className={classes.nested}>
+                  <ListItemText primary={page.name} />
+                </ListItem>
+              ))}
+
+            </List>
+          </Collapse>
+        </div>
+        ) : ''
+      }
 
       <ListItem onClick={() => handleNav('/aboutus')} button>
         <ListItemText primary='About Us' />

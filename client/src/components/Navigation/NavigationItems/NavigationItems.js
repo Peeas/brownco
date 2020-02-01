@@ -5,17 +5,17 @@ import SimpleMenu from './SimpleMenu/SimpleMenu';
 import useWindowDimensions from '../../../utils/useWindowDimensions';
 import NestedList from './NestedList/NestedList';
 import AuthContext from '../../../context/auth-context';
+import ProjectMenu from './ProjectMenu/ProjectMenu';
 
 const NavigationItems = (props) => {
     const { width } = useWindowDimensions();
     const authContext = useContext(AuthContext);
-    // <button className={classes.Logout} onClick={() => authContext.logout()}>logout</button>
     return (
         <div> 
             { width > 949 ?
             <ul className={classes.NavigationItems}>
                 <SimpleMenu /> 
-                <NavigationItem link="/projects"><span className={classes.LinkName}>Projects</span></NavigationItem>
+                { authContext.pages.length > 0 ? <ProjectMenu pages={authContext.pages} /> : '' }
                 <NavigationItem link="/aboutus"><span className={classes.LinkName}>about us</span></NavigationItem>
                 <NavigationItem link="/careers"><span className={classes.LinkName}>careers</span></NavigationItem>
                 <NavigationItem link="/contactus"><span className={classes.LinkName}>contact</span></NavigationItem>

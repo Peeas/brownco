@@ -1,24 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const Project = require('../models/Project');
 // Create Schema 
-const PagesSchema = new Schema({
+const PageSchema = new Schema({
     name: {
         type: String,
         required: true,
     },
-    title: {
+    file: {
         type: String, 
         required: true
     },
-    image: {
-        type: String, 
-        required: true
-    },
+    projects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
     date: {
         type: Date,
         default: Date.now
     }
 });
-  
-  module.exports = Page = mongoose.model('job', PagesSchema)
+
+
+module.exports = mongoose.model('Page', PageSchema)

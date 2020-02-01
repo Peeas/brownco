@@ -2,6 +2,7 @@ const express = require('express');
 const Project = require('../models/Project');
 const { validationResult } = require('express-validator');
 const fileHelper = require('../util/file');
+const Page = require('../models/Page');
 
 exports.getProjects = async (req, res, next) => {
     Project.find()
@@ -15,7 +16,7 @@ exports.getProjects = async (req, res, next) => {
 } 
 
 exports.postProject = async(req, res, next) => {
-    const { title, description, imagePosition} = req.body;
+    const { title, description, imagePosition, pageId} = req.body;
     const image = req.file;
     if (!image) {
         return res.status(422).json({errors: [{msg: 'Failed to store Image'}]});
@@ -30,11 +31,14 @@ exports.postProject = async(req, res, next) => {
             title: title,
             description: description,
             file: image.path,
-            imagePosition: imagePosition
+            imagePosition: imagePosition,
+            pageId: pageId
         });
         const newProject = await project.save();
+        const page = await Page.findById(pageId);
+        page.projects.push(newProject._id);
+        await page.save();
         res.json(newProject)
-
     } catch(err) {
         console.log(err);
         res.status(500).send('server error')
@@ -68,9 +72,12 @@ exports.editProject = async(req, res, next) => {
     }
 }
 
-exports.deleteProject = async(req, res, next) => {
+exports.deleteProject = async(req, res, next) => {    
     try {
         const project = await Project.findById(req.params.id);
+        const page = await Page.findById(req.params.pageId);
+        await page.projects.pull(req.params.id);
+        await page.save();
         if (!project) {
             return res.status(404).json({ msg: 'cannot delete project not found'})
         }
