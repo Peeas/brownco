@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import classes from './ProjectMenu.module.css';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 const ProjectMenu = props => {
   const [anchorEl, setAnchorEl] = React.useState(null);

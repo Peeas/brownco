@@ -11,6 +11,7 @@ import Loader from '../UI/Loader/Loader';
 import AddPage from './AddPage/AddPage';
 import Meta from '../Meta/Meta';
 import ContactUs from '../ContactUs/ContactUs'
+import { withRouter } from 'react-router-dom';
 class Projects extends Component {
   state = {
     page: null,
@@ -49,11 +50,11 @@ class Projects extends Component {
   init = () => {
     window.scrollTo(0, 0);
     const { id } = this.props.match.params;
-    if (id) {
+    if (id && id !== undefined) {
       this.setState({ id: id });
       this.getPage(id);
     } else {
-      this.setState({ loading: false });
+      this.props.history.push('/')
     }
   };
 
@@ -189,8 +190,8 @@ class Projects extends Component {
             </ResponsiveDialog>
             <div className={classes.ProjectsContainer}>
               <Meta
-                title={this.state.page.meta && this.state.page.meta.title ? this.state.page.meta.title + ' | Brownco' : 'Projects | Brownco'}
-                description={this.state.page.meta && this.state.page.meta.description ? this.state.page.meta.description : ''}
+                title={this.state.page && this.state.page.meta &&  this.state.page.meta.title ? this.state.page.meta.title + ' | Brownco' : 'Projects | Brownco'}
+                description={this.state.page && this.state.page.meta && this.state.page.meta.description ? this.state.page.meta.description : ''}
               />
               <Hero
                 projectPage={this.state.page !== null}
@@ -240,4 +241,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects;
+export default withRouter(Projects);
