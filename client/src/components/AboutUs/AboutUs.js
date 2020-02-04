@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
-import AboutUsHeroImage from '../../assets/images/Hero@2x.png';
+import AboutUsHeroImage from '../../assets/images/brownco_about_us_hero.png';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const AboutUs = () => {

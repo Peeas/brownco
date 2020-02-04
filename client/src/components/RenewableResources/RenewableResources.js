@@ -3,10 +3,10 @@ import classes from './RenewableResources.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import windEnergy from '../../assets/images/WindEnergy.jpg';
-import hydroImg from '../../assets/images/hydrogenstock.jpg';
-import bioImg from '../../assets/images/shutterstock_114362800.jpg';
-import wasteWaterImg from '../../assets/images/shutterstock_378017860.jpg';
-import solarImg from '../../assets/images/shutterstock_189889886.jpg';
+import hydroImg from '../../assets/images/hydrogen_natural_gas.jpg';
+import bioImg from '../../assets/images/biomas_pyrolytic_conversion.jpg';
+import wasteWaterImg from '../../assets/images/wastewater_treatment_facilities.jpg';
+import solarImg from '../../assets/images/photovoltaic_solar_power.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
 import Hero from '../UI/Hero/Hero';
 import renewableResourcesHeroImage from '../../assets/images/Background-renew.png';
@@ -70,7 +70,7 @@ const RenewableResources = () => {
         </section>
         <section className={classes.Concrete}>
           <div style={{ order: '1' }} className={classes.SectionImgContainer}>
-            <img src={hydroImg} alt='hydrogen' />
+            <img src={hydroImg} alt='hydrogen and natural gas power facilities' />
           </div>
           <div style={{ order: '2' }} className={classes.ConcreteCopyContainer}>
             <div>
@@ -96,7 +96,7 @@ const RenewableResources = () => {
           <div
             style={{ order: width > 700 ? '2' : '1' }}
             className={classes.SectionImgContainer}>
-            <img src={bioImg} alt='biomass' />
+            <img src={bioImg} alt='biomass and pyrolytic conversion' />
           </div>
 
           <div
@@ -160,7 +160,7 @@ const RenewableResources = () => {
           <div
             style={{ order: width > 700 ? '2' : '1' }}
             className={classes.SectionImgContainer}>
-            <img src={solarImg} alt='solar' />
+            <img src={solarImg} alt='photovoltaic solar thermoelectric power' />
           </div>
 
           <div

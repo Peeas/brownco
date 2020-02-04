@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './Landing.module.css';
-import concreteImg from '../../assets/images/RectangleCopy7@2x.jpg';
-import DemoImg from '../../assets/images/Demolition@2x.jpg';
+import concreteImg from '../../assets/images/concrete_construction.jpg';
+import DemoImg from '../../assets/images/demolition_and_excavation.jpg';
 import WindEnergy from '../../assets/images/WindEnergy.jpg';
 import TenantImprovement from '../../assets/images/BackgroundImage.png';
-import StructuralSteel from '../../assets/images/Rectangl6.png';
-import BackgroundImage from '../../assets/images/Index@3x.jpg';
+import StructuralSteel from '../../assets/images/brownco_team_leaders_structural_steel.png';
+import BackgroundImage from '../../assets/images/brownco_large_hero_background.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
-import smallBackground from '../../assets/images/Index.jpg';
+import smallBackground from '../../assets/images/brownco_small_hero_background.jpg';
 import ContactUs from '../ContactUs/ContactUs';
 import { withRouter } from 'react-router-dom';
 import Hero from '../UI/Hero/Hero';
@@ -76,7 +76,7 @@ const Landing = props => {
 
       <section className={classes.Concrete}>
         <div className={classes.Section2ImgContainer}>
-          <img src={DemoImg} alt='' />
+          <img src={DemoImg} alt='Demolition and Excavation' />
         </div>
         <div className={classes.Section2CopyContainer}>
           <div>

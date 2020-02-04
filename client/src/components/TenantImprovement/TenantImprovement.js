@@ -17,7 +17,7 @@ const TenantImprovement = () => {
             }
           />
         <Hero
-          bgImageAlt={'renant-improvement-bg-image-brownco'}
+          bgImageAlt={'tenant-improvement-bg-image-brownco'}
           heroImage={tenantImprovementImage}
           heroText={'Tenant Improvement'}
         />
