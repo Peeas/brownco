@@ -46,6 +46,7 @@
 @media(max-width: 400px) {
   
     .HeroContentTitle {
+        font-size: 40px;
         font-style: normal;
         text-align: center;
     }

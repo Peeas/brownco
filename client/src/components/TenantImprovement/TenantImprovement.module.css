@@ -4,36 +4,6 @@
     margin-top: 71px;
 }
 
-.Top {
-    display: flex;
-    top: 0;
-    left: 0;
-
-}
-.Background {
-    background-image: url(../../assets/images/tenant.jpg);
-    background-size: cover;
-    width: 100vw;
-}
-.HomepageHero {
-    margin-top: 4vh;
-    text-align: center;
-    width: 100vw;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.HeroContentTitle {
-    height: 71px;
-    color: rgba(255, 255, 255, 0.87);
-    font-family: Rubik;
-    font-size: 60px;
-    font-weight: 300;
-}
-
 .titleContainer {
     height: 300px;
     margin: 0 auto;
@@ -96,19 +66,9 @@
         display: flex;
         flex-direction: column;
     }
-
-    .Background {
-        min-height: 600px;
-        background-repeat: repeat-y;
-        margin-top: 81px;
-    }
-
     .titleContainer {
         height: 300px;
         padding: 15px;
-    }
-    .HeroContentTitle {
-        font-size: 45px;
     }
     .titleContainer {
         margin: 20px;

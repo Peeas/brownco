@@ -7,7 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 const style =  {
     backgroundSize: "cover",
     height: '800px',
-    marginTop: '150px'
+    marginTop: '300px'
 }
 const Hero = props => {
     const heroImage = props.heroImage ? props.heroImage : defaultImg;
