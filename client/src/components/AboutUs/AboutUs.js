@@ -18,6 +18,7 @@ const AboutUs = () => {
       />
       <section className={classes.ContextContainer}>
         <div className={classes.Context}>
+        <p>
           "Building with Purpose" is Brownco Construction Company Inc's pledge.
           A family owned and operated business since 1953, Brownco performs new,
           specialized and maintenance construction for commercial and industrial
@@ -26,21 +27,26 @@ const AboutUs = () => {
           insured and certified to assist you in your project - no matter how
           small or large, we can build or modify your project in a safe and
           efficient way.
+          </p>
         </div>
         <div className={classes.SecondContextContainer}>
-          <h3>What sets Brownco Apart</h3>
+          <h2>What sets Brownco Apart</h2>
           <div className={classes.SecondSub1}>
+          <p>
             Our People <br />
             Performance Based Processes <br />
             Integrated Solutions <br />
             Client Relationship Management <br />
             Strategic Mix of Technology and Business
+            </p>
           </div>
           <div className={classes.NumericVals}>
+          <p>
             Entity Identification Number: 33-0865398 <br />
             California Corporation Number: C-2171804 <br />
             Department of Industrial Relations Number: 1000012241 <br />
             Small Business Certification Number: 2015482
+            </p>
           </div>
         </div>
 

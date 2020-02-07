@@ -30,7 +30,7 @@ const ConcreteConstruction = () => {
         <div className={classes.SolutionsContainer}>
           <div>
             <div className={classes.StructuralSub}>
-              Concrete Cast In Place Solutions
+              <h2>Concrete Cast In Place Solutions</h2>
             </div>
             <div className={classes.SolutionsColumns}>
               <div>

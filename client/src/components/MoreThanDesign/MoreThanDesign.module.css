@@ -5,6 +5,7 @@
     justify-content: center;
     margin: 0 auto;
 }
+
 .DesignTitle {
     height: 26px;
     opacity: 0.87;
@@ -15,11 +16,12 @@
     line-height: 26px;
     text-align: center;
 }
+
 .DesignRow {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 61px;
+    margin-bottom: 3rem;
 }
 
 .DesignRowContainer {
@@ -31,17 +33,16 @@
 
 .DesignRowCopy {
     opacity: 0.54;
-    color: #000000;
-    font-family: Rubik;
-    font-size: 14px;
-    line-height: 28px;
+    line-height: 1.75rem;
     margin-left: 24px;
 }
+
 .DesignRowImg {
     min-width: 67px;
     display: flex;
     flex-direction: column
 }
+
 @media(max-width: 700px) {
 
     .DesignRow {
@@ -49,6 +50,7 @@
     }
 
 }
+
 @media(min-width: 699px) {
     .DesignTitle {
         width: 549px;
