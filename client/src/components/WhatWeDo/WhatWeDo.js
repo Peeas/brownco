@@ -28,17 +28,19 @@ const WhatWeDo = () => {
         />
         <div className={classes.titleContainer}>
           <div>
+          <p>
             Brownco Construction Company Inc.'s Structural Steel Team is ready
             to modify, fabricate and erect steel structures. Brownco's crew of
             LA certified welders combine ability, experience and equipment to
             provide you with the most value to complete your projects on time
             and within budget.
+            </p>
           </div>
         </div>
         <div className={classes.SolutionsContainer}>
           <div>
             <div className={classes.StructuralSub}>
-              Structural Steel + Erection Solutions
+              <h2>Structural Steel + Erection Solutions</h2>
             </div>
             <div className={classes.SolutionsColumns}>
               <div>

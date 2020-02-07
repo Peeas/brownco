@@ -24,6 +24,7 @@ const DemolitionExcavation = () => {
         />
         <div className={classes.titleContainer}>
           <div>
+          <p>
             From concrete slabs, steel structures to buildings Brownco
             Construction Company Inc. has the experience, knowledge and
             equipment including excavators with sheer attachments and hydraulic
@@ -31,11 +32,14 @@ const DemolitionExcavation = () => {
             your demolition which may include removing hazardous or regulated
             materials, obtaining permits, submitting notices, disconnecting
             utilities and develop site specific safety and work plans.
+            </p>
           </div>
         </div>
         <div className={classes.SolutionsContainer}>
           <div>
-            <div className={classes.StructuralSub}>Complete Solution</div>
+            <div className={classes.StructuralSub}>
+            <h2>Complete Solution</h2>
+            </div>
             <div className={classes.SolutionsColumns}>
               <div>
                 Hard and Soft Demolition

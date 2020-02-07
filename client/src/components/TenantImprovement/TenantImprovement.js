@@ -23,6 +23,7 @@ const TenantImprovement = () => {
         />
         <div className={classes.titleContainer}>
           <div>
+          <p>
             Need to remodel a commercial office space? Brownco Construction
             Company Inc can add a bathroom and office space. Need to reconfigure
             a machinery line or area? Brownco can configure and install
@@ -30,11 +31,14 @@ const TenantImprovement = () => {
             matter the project size, Brownco has the depth and experience to
             develop cost effective plans and provide the leadership and
             direction to manage your projects from conception to completion.
+            </p>
           </div>
         </div>
         <div className={classes.SolutionsContainer}>
           <div>
-            <div className={classes.StructuralSub}>Complete Solution</div>
+            <div className={classes.StructuralSub}>
+            <h2>Complete Solution</h2>
+            </div>
             <div className={classes.SolutionsColumns}>
               <div>
                 Remodel

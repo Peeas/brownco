@@ -10,9 +10,12 @@
 .LandingFooterPanel {
     height: 298px;
 }
+
 .LandingHeroPanel {
-    height: 400px;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
+
 .LandingHeroPanel,
 .LandingFooterPanel {
     width: 100vw;
