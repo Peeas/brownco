@@ -1,8 +1,17 @@
 const express = require('express');
 const Project = require('../models/Project');
 const { validationResult } = require('express-validator');
-const fileHelper = require('../util/file');
 const Page = require('../models/Page');
+const aws = require('aws-sdk');
+const fs = require('fs');
+
+aws.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: process.env.AWS_REGION
+})
+
+const s3 = new aws.S3();
 
 exports.getProjects = async (req, res, next) => {
     Project.find()
@@ -16,7 +25,7 @@ exports.getProjects = async (req, res, next) => {
 } 
 
 exports.postProject = async(req, res, next) => {
-    const { title, description, imagePosition, pageId} = req.body;
+    const { title, description, imagePosition, pageId } = req.body;
     const image = req.file;
     if (!image) {
         return res.status(422).json({errors: [{msg: 'Failed to store Image'}]});
@@ -26,11 +35,10 @@ exports.postProject = async(req, res, next) => {
         return res.status(400).json({errors: errors.array()})
     }
     try {   
-
         const project = new Project({
             title: title,
             description: description,
-            file: image.path,
+            file: req.file.location,
             imagePosition: imagePosition,
             pageId: pageId
         });
@@ -61,10 +69,17 @@ exports.editProject = async(req, res, next) => {
         project.description = description;
         project.imagePosition = imagePosition;
         if (image) {
-            fileHelper.deleteFile(project.file);
-            project.file = image.path;
+            project.file = image.location;
         }
         const updatedProject = await project.save();
+        if (image) {
+            let key = project.file.split('/').pop();
+            let params = {Bucket: process.env.AWS_BUCKET_NAME, Key: key}
+            s3.deleteObject(params, (err, data) => {
+                if (err) console.log(err, err.stack);  // error
+                else console.log('deleted'); 
+            })
+        }
         res.json(updatedProject)
     } catch(err) {
         console.log(err.message);
@@ -81,7 +96,12 @@ exports.deleteProject = async(req, res, next) => {
         if (!project) {
             return res.status(404).json({ msg: 'cannot delete project not found'})
         }
-        fileHelper.deleteFile(project.file);
+        let key = project.file.split('/').pop();
+        let params = {Bucket: process.env.AWS_BUCKET_NAME, Key: key}
+        s3.deleteObject(params, (err, data) => {
+            if (err) console.log(err, err.stack);  // error
+            else console.log('deleted'); 
+        })
         await project.remove();
         res.json({ msg: 'Project successfully removed' });
     } catch(err) {

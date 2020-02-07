@@ -69,7 +69,7 @@ class Projects extends Component {
           page: res.data,
           projects: res.data.projects,
           title: res.data.name,
-          heroImage: '/' + res.data.file
+          heroImage: res.data.file
         });
         this.setState({ loading: false });
       }
