@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import classes from './AddPage.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -6,13 +6,16 @@ import axios from 'axios';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import { withRouter } from 'react-router';
+import Loader from '../../UI/Loader/Loader';
 
 class AddPage extends Component {
   constructor(props) {
     super(props);
     let name = props.isEdit ? props.page.name : '';
-    let metaTitle = props.isEdit && props.page.meta ? props.page.meta.title : '';
-    let metaDescription = props.isEdit && props.page.meta ? props.page.meta.description : '';
+    let metaTitle =
+      props.isEdit && props.page.meta ? props.page.meta.title : '';
+    let metaDescription =
+      props.isEdit && props.page.meta ? props.page.meta.description : '';
 
     this.state = {
       pageForm: {
@@ -21,7 +24,9 @@ class AddPage extends Component {
         metaTitle: metaTitle,
         metaDescription: metaDescription
       },
-      isEdit: props.isEdit
+      isEdit: props.isEdit,
+      loading: false,
+      imageError: ''
     };
   }
   handleChange = (event, i) => {
@@ -35,22 +40,31 @@ class AddPage extends Component {
   };
   handleImageChange = (event, i) => {
     let file = event.target.files[0];
-    // let size = (file.size / 1024 / 1024).toFixed(2);
-
-    // let fileName = file.name;
-    let updatedForm = {
-      ...this.state.pageForm
-    };
-    updatedForm[event.target.name] = file;
-    this.setState({
-      pageForm: updatedForm,
-      imageError: ''
-    });
+    let size = (file.size / 1024 / 1024).toFixed(2);
+    if (file && size > 3) {
+      this.setState({
+        imageError: 'please select an image under 3 mb'
+      });
+    } else {
+      let updatedForm = {
+        ...this.state.pageForm
+      };
+      updatedForm[event.target.name] = file;
+      this.setState({
+        pageForm: updatedForm,
+        imageError: ''
+      });
+    }
   };
   onSubmit = async e => {
     e.preventDefault();
-
+    this.setState({ loading: true });
     const token = localStorage.getItem('token');
+    if (this.state.imageError) {
+      alert('Please select an image under 3mb. Larger images will affect site performance');
+      this.setState({ loading: false });
+      return;
+    }
     try {
       let page = new FormData();
       if (
@@ -61,6 +75,7 @@ class AddPage extends Component {
       }
       if (!this.state.isEdit && this.state.pageForm.image === '') {
         alert('please add an image');
+        this.setState({loading: false})
         return;
       }
       page.append('name', this.state.pageForm.name);
@@ -84,6 +99,7 @@ class AddPage extends Component {
         );
       }
       if (res && res.status === 200) {
+        this.setState({loading: false})
         if (!this.state.isEdit) {
           alert('Page added Successfully!');
           this.props.history.push(`/projects/${res.data._id}`);
@@ -93,6 +109,7 @@ class AddPage extends Component {
         this.props.toggleClose();
       }
     } catch (err) {
+      this.setState({loading: false})
       console.error('error', err);
       alert('Error adding page!');
       this.props.toggleClose();
@@ -101,94 +118,99 @@ class AddPage extends Component {
   render() {
     return (
       <div className={classes.AddPageContainer}>
-        <div>
-          {this.state.isEdit ? 'Edit' : 'Add'} Page{' '}
-          {this.state.isEdit &&
-          this.props.page._id !== '5e34a6c0ef581f9be4741ef5' &&
-          this.props.canDelete ? (
-            <span>
-              <IconButton onClick={this.props.onDeletePage}>
-                <DeleteIcon />
-              </IconButton>
-            </span>
-          ) : (
-            ''
-          )}
-        </div>
+        {this.state.loading ? (
+          <Loader></Loader>
+        ) : (
+          <Fragment>
+            <div>
+              {this.state.isEdit ? 'Edit' : 'Add'} Page{' '}
+              {this.state.isEdit &&
+              this.props.page._id !== '5e34a6c0ef581f9be4741ef5' &&
+              this.props.canDelete ? (
+                <span>
+                  <IconButton onClick={this.props.onDeletePage}>
+                    <DeleteIcon />
+                  </IconButton>
+                </span>
+              ) : (
+                ''
+              )}
+            </div>
+            <form
+              className={classes.PageForm}
+              onSubmit={e => this.onSubmit(e)}
+              id='projectForm'>
+              <TextField
+                id='Name'
+                name='name'
+                label='Page Name'
+                type='text'
+                value={this.state.pageForm.name}
+                className={classes.textField}
+                onChange={event => this.handleChange(event)}
+                margin='normal'
+                variant='filled'
+                inputProps={{ maxLength: 50 }}
+              />
 
-        <form
-          className={classes.PageForm}
-          onSubmit={e => this.onSubmit(e)}
-          id='projectForm'>
-          <TextField
-            id='Name'
-            name='name'
-            label='Page Name'
-            type='text'
-            value={this.state.pageForm.name}
-            className={classes.textField}
-            onChange={event => this.handleChange(event)}
-            margin='normal'
-            variant='filled'
-            inputProps={{ maxLength: 50 }}
-          />
-
-          <label htmlFor='image'>
-            {!this.state.isEdit ? (
-              'Project Image'
-            ) : (
-              <span>
-                New Image <i> (leave blank for existing image) </i>
-              </span>
-            )}
-          </label>
-          <TextField
-            id='image'
-            name='image'
-            type='file'
-            error={this.state.imageError !== ''}
-            className={classes.textField}
-            helperText={this.state.imageError}
-            onChange={event => this.handleImageChange(event)}
-            margin='normal'
-            variant='outlined'
-            inputProps={{ accept: 'image/*' }}
-          />
-          <div>Meta Tags</div>
-          <TextField
-            id='metaTitle'
-            name='metaTitle'
-            label='Meta Title'
-            type='text'
-            value={this.state.pageForm.metaTitle}
-            className={classes.textField}
-            onChange={event => this.handleChange(event)}
-            margin='normal'
-            variant='filled'
-            inputProps={{ maxLength: 50 }}
-          />
-          <TextField
-            id='metaDescription'
-            name='metaDescription'
-            label='Meta Description'
-            type='text'
-            value={this.state.pageForm.metaDescription}
-            className={classes.textField}
-            onChange={event => this.handleChange(event)}
-            margin='normal'
-            variant='filled'
-            rows='4'
-            multiline
-            inputProps={{
-              maxLength: 808
-            }}
-          />
-          <div className={classes.ProjectActionRow}>
-            <Button variant='contained' type='submit' color='primary'>
-              {this.state.isEdit ? 'Update' : 'Add'} Page
-            </Button>
-          </div>
-        </form>
+              <label htmlFor='image'>
+                {!this.state.isEdit ? (
+                  'Project Image'
+                ) : (
+                  <span>
+                    New Image <i> (leave blank for existing image) </i>
+                  </span>
+                )}
+              </label>
+              <TextField
+                id='image'
+                name='image'
+                type='file'
+                error={this.state.imageError !== ''}
+                className={classes.textField}
+                helperText={this.state.imageError}
+                onChange={event => this.handleImageChange(event)}
+                margin='normal'
+                variant='outlined'
+                inputProps={{ accept: 'image/*' }}
+              />
+              <div>Meta Tags</div>
+              <TextField
+                id='metaTitle'
+                name='metaTitle'
+                label='Meta Title'
+                type='text'
+                value={this.state.pageForm.metaTitle}
+                className={classes.textField}
+                onChange={event => this.handleChange(event)}
+                margin='normal'
+                variant='filled'
+                inputProps={{ maxLength: 50 }}
+              />
+              <TextField
+                id='metaDescription'
+                name='metaDescription'
+                label='Meta Description'
+                type='text'
+                value={this.state.pageForm.metaDescription}
+                className={classes.textField}
+                onChange={event => this.handleChange(event)}
+                margin='normal'
+                variant='filled'
+                rows='4'
+                multiline
+                inputProps={{
+                  maxLength: 808
+                }}
+              />
+              <div className={classes.ProjectActionRow}>
+                <Button variant='contained' type='submit' color='primary'>
+                  {this.state.isEdit ? 'Update' : 'Add'} Page
+                </Button>
+              </div>
+            </form>
+          </Fragment>
+        )}
       </div>
     );
   }
