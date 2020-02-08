@@ -13,7 +13,9 @@ const ProjectMenu = props => {
 
   const handleClose = (event, page) => {
     setAnchorEl(null);
-    props.history.push(`/projects/${page._id}`)
+    if (page && page._id && page._id !== undefined) {
+      props.history.push(`/projects/${page._id}`)
+    }
   }
 
   return (

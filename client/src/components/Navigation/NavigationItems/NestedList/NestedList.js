@@ -38,7 +38,7 @@ const NestedList = props => {
   };
   
   const handleProjNav = page => {
-    if (page && page._id) {
+    if (page && page._id && page._id !== undefined) {
       props.history.push(`/projects/${page._id}`);
     }
   };
