@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
-import AboutUsHeroImage from '../../assets/images/brownco_about_us_hero.png';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const AboutUs = () => {
@@ -12,7 +11,7 @@ const AboutUs = () => {
       <Meta title={'About Us | Brownco'} description={"Think Safety Work Safely, The Brownco Way. Building with Purpose."} />
       <Hero
         bgImageAlt={'about-us-bg-image-brownco'}
-        heroImage={AboutUsHeroImage}
+        heroImage={AboutUsFootImg}
         aboutUs={true}
         heroText={'About Us'}
       />
