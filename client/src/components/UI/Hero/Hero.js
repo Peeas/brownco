@@ -4,17 +4,11 @@ import { Parallax } from 'react-parallax';
 import defaultImg from '../../../assets/images/grey-default.png';
 import Fab from '@material-ui/core/Fab';
 import EditIcon from '@material-ui/icons/Edit';
-const style =  {
-    backgroundSize: "cover",
-    height: '800px',
-    marginTop: '300px'
-}
 const Hero = props => {
     const heroImage = props.heroImage ? props.heroImage : defaultImg;
     return (
         <div className={classes.Top}>
             <Parallax
-                bgImageStyle={props.aboutUs ? style : {display: 'flex'}}
                 bgImage={heroImage}
                 bgImageAlt={props.bgImageAlt}
                 strength={600}>
