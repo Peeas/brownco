@@ -38,7 +38,9 @@ const NestedList = props => {
   };
   
   const handleProjNav = page => {
-    props.history.push(`/projects/${page._id}`);
+    if (page && page._id) {
+      props.history.push(`/projects/${page._id}`);
+    }
   };
   const handleProjClick = () => {
     if (open) {
