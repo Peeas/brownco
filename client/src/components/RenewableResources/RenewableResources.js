@@ -43,14 +43,14 @@ const RenewableResources = () => {
           <div
             style={{ order: width > 700 ? '2' : '1' }}
             className={classes.SectionImgContainer}>
-            <img src={windEnergy} alt='wind-energy' />
+            <img src={windEnergy} alt='Wind Energy' />
           </div>
           <div
             style={{ order: width > 700 ? '1' : '2' }}
             className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
-              <div className={classes.SectionHeader}>WIND ENERGY</div>
+              <div className={classes.SectionHeader}><h2>Wind Energy</h2></div>
               <ul className={classes.ConcreteCopy}>
                 <li>1 Unit to 100+ Units</li>
                 <li>Design and equipment based on the location</li>
@@ -76,7 +76,7 @@ const RenewableResources = () => {
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>
-                HYDROGEN + NATURAL GAS
+                <h2>Hydrogen + Natural Gas</h2>
               </div>
               <ul className={classes.ConcreteCopy}>
                 <li>
@@ -105,7 +105,7 @@ const RenewableResources = () => {
             <div>
               <div className={classes.Orangebar}></div>
               <div className={classes.SectionHeader}>
-                Biomass + Pyrolytic Conversion
+                <h2>Biomass + Pyrolytic Conversion</h2>
               </div>
               <ul className={classes.ConcreteCopy}>
                 <li>
@@ -141,7 +141,7 @@ const RenewableResources = () => {
           <div style={{ order: '2' }} className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
-              <div className={classes.SectionHeader}>Waste Water</div>
+              <div className={classes.SectionHeader}><h2>Waste Water</h2></div>
               <ul className={classes.ConcreteCopy}>
                 <li>Interceptors</li>
                 <li>Clarifiers</li>
@@ -168,7 +168,7 @@ const RenewableResources = () => {
             className={classes.ConcreteCopyContainer}>
             <div>
               <div className={classes.Orangebar}></div>
-              <div className={classes.SectionHeader}>Photovoltaic / Solar</div>
+              <div className={classes.SectionHeader}><h2>Photovoltaic / Solar</h2></div>
               <ul className={classes.ConcreteCopy}>
                 <li>Flat Plate Collectors</li>
                 <li>Thin Film solar cells</li>
