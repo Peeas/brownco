@@ -13,11 +13,11 @@ class ParallaxHero extends Component {
         return (
                 <Parallax strength={600}>
                     <Background className={classes.heroImageContainer}>
-                        <img style={imgStyle} src={this.props.paraIimg} alt="hero" />
+                        <img style={imgStyle} src={this.props.paraIimg} alt="Hero" />
                     </Background>
                     <div className={classes.HomepageHero}>
                         <div className={classes.HeroContentTitle}>
-                            {this.props.heroText}
+                            <h1>{this.props.heroText}</h1>
                         </div>
                     </div>
                 </Parallax>

@@ -10,7 +10,7 @@ const AboutUs = () => {
     <div className={classes.AboutUsContainer}>
       <Meta title={'About Us | Brownco'} description={"Think Safety Work Safely, The Brownco Way. Building with Purpose."} />
       <Hero
-        bgImageAlt={'about-us-bg-image-brownco'}
+        bgImageAlt={'About Us'}
         heroImage={AboutUsFootImg}
         aboutUs={true}
         heroText={'About Us'}
@@ -55,6 +55,7 @@ const AboutUs = () => {
             California Contractors State License Number: 769921 <br />
             Classifications: A, B, C8, C16, C21, C36, C51, C61, D42 <br />
             Certifications: HAZ <br />
+            Department of Building and Safety Certificate of Approval: FB03335
           </div>
 
           <div className={classes.ThirdSub2}>

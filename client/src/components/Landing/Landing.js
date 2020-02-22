@@ -22,7 +22,7 @@ const Landing = props => {
   return (
     <div className={classes.LandingContainer}>
       <Meta
-        title={'Home | Brownco'}
+        title={'Home | Brownco Construction'}
         description={
           'Every industrial commercial building needs Brownco Construction Co., Inc. someday they will need refurbishment, repairs, additions and/or modifications.'
         }
