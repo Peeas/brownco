@@ -8,12 +8,12 @@ const  MoreThanDesign = () => {
         <div className={classes.DesignConstruction}>
         <div>
             <div className={classes.DesignTitle}>
-                Much More than Design and Construction
+                <h2>Much More than Design and Construction</h2>
             </div>
             <div className={classes.DesignRowContainer}>
                 <div className={classes.DesignRow}> 
                     <div className={classes.DesignRowImg}>
-                        <img src={analysisimg} alt="performance-analyses"/>
+                        <img src={analysisimg} alt="Performance Analysis"/>
                     </div>
                     <div className={classes.DesignRowCopy}>
                         We will perform feasability and performance analyses to guide decision makers.
@@ -21,7 +21,7 @@ const  MoreThanDesign = () => {
                 </div>
                 <div className={classes.DesignRow}>
                     <div className={classes.DesignRowImg}>
-                        <img src={certImg} alt="certification-validation"/>
+                        <img src={certImg} alt="Certification Validation"/>
                     </div>
                     <div className={classes.DesignRowCopy}>
                         We handle permitting and design through certification and validation.
@@ -29,7 +29,7 @@ const  MoreThanDesign = () => {
                 </div>
                 <div className={classes.DesignRow}>
                     <div className={classes.DesignRowImg}>
-                        <img src={budget} alt="generate-budget"/>
+                        <img src={budget} alt="Generate Budget"/>
                     </div>
                     <div className={classes.DesignRowCopy}>
                         Our experts will generate budget numbers to aid in appropriating funds for your project.

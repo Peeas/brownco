@@ -22,7 +22,7 @@ const Landing = props => {
   return (
     <div className={classes.LandingContainer}>
       <Meta
-        title={'Home | Brownco'}
+        title={'Home | Brownco Construction'}
         description={
           'Every industrial commercial building needs Brownco Construction Co., Inc. someday they will need refurbishment, repairs, additions and/or modifications.'
         }
@@ -30,10 +30,10 @@ const Landing = props => {
       <section>
         <div className={classes.Top}>
           <Hero
-            bgImageAlt={'landing-bg-image-brownco'}
+            bgImageAlt={'Brownco Construction Company, Inc.'}
             heroImage={heroBuilding}
             isLanding={true}
-            subText={'Brownco Construction Company Inc.'}
+            subText={'Brownco Construction Company, Inc.'}
             heroText={'Building With Purpose'}
           />
         </div>

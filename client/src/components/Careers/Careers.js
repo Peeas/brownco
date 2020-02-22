@@ -106,7 +106,7 @@ class Careers extends Component {
     }
     return (
       <div className={classes.CarrersContainerpage}>
-        <Meta title={'Careers | Brownco'} description={"It's not easy work but it is rewarding. We are growing and looking for hardworking team players with grit! Submit a resume at Brownco Construction Co. Inc.’s website."} />
+        <Meta title={'Careers | Brownco Construction'} description={"It's not easy work but it is rewarding. We are growing and looking for hardworking team players with grit! Submit a resume at Brownco Construction Co. Inc.’s website."} />
         <ResponsiveDialog
           isOpen={this.state.showPost === true}
           onClose={this.toggleClose}>
@@ -118,7 +118,7 @@ class Careers extends Component {
 
         <div className={classes.CareersContainer}>
           <Hero
-            bgImageAlt={'careers-bg-image-brownco'}
+            bgImageAlt={'Careers at Brownco'}
             heroText={'Available Positions'} />
 
           {this.state.loading ? (
