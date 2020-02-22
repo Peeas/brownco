@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import classes from './WhatWeDo.module.css';
-import BackgroundImage from '../../assets/images/brownco_large_hero_background.jpg';
+import BackgroundImage from '../../assets/images/hero-structural-steel.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
-import smallBackground from '../../assets/images/brownco_small_hero_background.jpg';
+import smallBackground from '../../assets/images/hero-structural-steel.jpg';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import Hero from '../UI/Hero/Hero';
@@ -18,11 +18,11 @@ const WhatWeDo = () => {
         <Meta
           title={'Structural Steel | Brownco'}
           description={
-            'Brownco Construction Company Inc. fabricated and installed employee protection guardrail. Need guardrails, safety bollards, ADA compliance?'
+            'Brownco Construction Company, Inc. fabricated and installed employee protection guardrail. Need guardrails, safety bollards, ADA compliance?'
           }
         />
         <Hero
-          bgImageAlt={'structural-steel-bg-image-brownco'}
+          bgImageAlt={'Structural Steel'}
           heroImage={heroBuilding}
           heroText={'Structural Steel'}
         />

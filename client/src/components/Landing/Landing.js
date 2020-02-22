@@ -30,10 +30,10 @@ const Landing = props => {
       <section>
         <div className={classes.Top}>
           <Hero
-            bgImageAlt={'landing-bg-image-brownco'}
+            bgImageAlt={'Brownco Construction Company, Inc.'}
             heroImage={heroBuilding}
             isLanding={true}
-            subText={'Brownco Construction Company Inc.'}
+            subText={'Brownco Construction Company, Inc.'}
             heroText={'Building With Purpose'}
           />
         </div>
