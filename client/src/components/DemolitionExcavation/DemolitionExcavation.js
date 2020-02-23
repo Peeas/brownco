@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import classes from './DemolitionExcavation.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
-import demoHero from '../../assets/images/img-demolition.jpg';
+import demoHero from '../../assets/images/hero-demolition-excavation.jpg';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 
