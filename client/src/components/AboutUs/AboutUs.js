@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
-import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
+import AboutUsFootImg from '../../assets/images/hero-about-us.jpg';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const AboutUs = () => {

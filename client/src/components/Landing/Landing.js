@@ -3,7 +3,7 @@ import classes from './Landing.module.css';
 import concreteImg from '../../assets/images/concrete_construction.jpg';
 import DemoImg from '../../assets/images/demolition_and_excavation.jpg';
 import WindEnergy from '../../assets/images/WindEnergy.jpg';
-import TenantImprovement from '../../assets/images/BackgroundImage.png';
+import TenantImprovement from '../../assets/images/hero-tenant-imrpovement.jpg';
 import StructuralSteel from '../../assets/images/brownco_team_leaders_structural_steel.png';
 import BackgroundImage from '../../assets/images/brownco_large_hero_background.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
