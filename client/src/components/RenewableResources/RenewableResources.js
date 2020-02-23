@@ -9,7 +9,7 @@ import wasteWaterImg from '../../assets/images/wastewater_treatment_facilities.j
 import solarImg from '../../assets/images/photovoltaic_solar_power.jpg';
 import useWindowDimensions from '../../utils/useWindowDimensions';
 import Hero from '../UI/Hero/Hero';
-import renewableResourcesHeroImage from '../../assets/images/Background-renew.png';
+import renewableResourcesHeroImage from '../../assets/images/hero-renewable-energy.jpg';
 import Meta from '../Meta/Meta';
 
 const RenewableResources = () => {
@@ -25,7 +25,7 @@ const RenewableResources = () => {
           }
         />
         <Hero
-          bgImageAlt={'renewable-resources-bg-image-brownco'}
+          bgImageAlt={'Renewable Resources'}
           heroImage={renewableResourcesHeroImage}
           heroText={'Renewable Energy Resources'}
         />
