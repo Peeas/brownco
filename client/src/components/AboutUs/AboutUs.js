@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
-import AboutUsFootImg from '../../assets/images/img-about-us.jpg';
+import AboutUsFootImg from '../../assets/images/hero-about-us.jpg';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const AboutUs = () => {
@@ -41,10 +41,11 @@ const AboutUs = () => {
           </div>
           <div className={classes.NumericVals}>
           <p>
-            Entity Identification Number: 33-0865398 <br />
-            California Corporation Number: C-2171804 <br />
-            Department of Industrial Relations Number: 1000012241 <br />
-            Small Business Certification Number: 2015482
+            Entity Identification #33-0865398 <br />
+            California Corporation #C-2171804 <br />
+            Department of Industrial Relations #1000012241 <br />
+            Small Business Certification #2015482<br />
+            LA City Certified Structural Steel Fabrication License #FB03335
             </p>
           </div>
         </div>
@@ -55,7 +56,7 @@ const AboutUs = () => {
             California Contractors State License Number: 769921 <br />
             Classifications: A, B, C8, C16, C21, C36, C51, C61, D42 <br />
             Certifications: HAZ <br />
-            Department of Building and Safety Certificate of Approval: FB03335
+            
           </div>
 
           <div className={classes.ThirdSub2}>

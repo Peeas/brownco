@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import classes from './TenantImprovement.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
-import tenantImprovementImage from '../../assets/images/tenant.jpg';
+import tenantImprovementImage from '../../assets/images/hero-tenant-imrpovement.jpg';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const TenantImprovement = () => {
