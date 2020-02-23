@@ -3,7 +3,7 @@ import classes from './ConcreteConstruction.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import MoreThanDesign from '../MoreThanDesign/MoreThanDesign';
 import Hero from '../UI/Hero/Hero';
-import concreteImage from '../../assets/images/img-concrete.jpg';
+import concreteImage from '../../assets/images/hero-concrete-construction.jpg';
 import Meta from '../Meta/Meta';
 
 const ConcreteConstruction = () => {
