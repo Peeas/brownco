@@ -11,7 +11,7 @@ const ContactUs = (props) => {
         <div>
             <section className={classes.LandingFooterPanel}>
                 <div className={classes.LandingFooterPanelCopy}>
-                    <h1>Contact Us</h1>
+                    <h2>Contact Us</h2>
                     <p>We invite you to contact us with any requests or questions you may have. </p>
                     <button className={classes.CommonButton} onClick={onHandleContactClick}>
                         Contact

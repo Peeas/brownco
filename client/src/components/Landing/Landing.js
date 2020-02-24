@@ -22,18 +22,19 @@ const Landing = props => {
   return (
     <div className={classes.LandingContainer}>
       <Meta
-        title={'Home | Brownco Construction'}
+        title={'Home | Brownco Construction Co., Inc.'}
         description={
           'Every industrial commercial building needs Brownco Construction Co., Inc. someday they will need refurbishment, repairs, additions and/or modifications.'
         }
+        keywords={'Concrete, Construction, Demolition, Excavation, Construction, Structural Steel, Tenant Improvement, Renewable Energy, Renewable Resources, Anaheim'}
       />
       <section>
         <div className={classes.Top}>
           <Hero
-            bgImageAlt={'Brownco Construction Company, Inc.'}
+            bgImageAlt={'Brownco Construction Company Co., Inc.'}
             heroImage={heroBuilding}
             isLanding={true}
-            subText={'Brownco Construction Company, Inc.'}
+            subText={'Brownco Construction Company Co., Inc.'}
             heroText={'Building With Purpose'}
           />
         </div>
@@ -64,7 +65,7 @@ const Landing = props => {
             <div
               className={classes.LearnMore}
               onClick={() => onLearnMore('/concrete-construction')}>
-              Learn More
+              Learn More →
             </div>
           </div>
         </div>
@@ -90,7 +91,7 @@ const Landing = props => {
             <div
               className={classes.LearnMore}
               onClick={() => onLearnMore('/demolition-excavation')}>
-              Learn More
+              Learn More →
             </div>
             <div className={classes.MobilePadding}></div>
           </div>
@@ -110,7 +111,7 @@ const Landing = props => {
             <div
               className={classes.LearnMore}
               onClick={() => onLearnMore('/structural-steel')}>
-              Learn More
+              Learn More →
             </div>
           </div>
         </div>
@@ -136,7 +137,7 @@ const Landing = props => {
             <div
               className={classes.LearnMore}
               onClick={() => onLearnMore('/tenant-improvement')}>
-              Learn More
+              Learn More →
             </div>
             <div className={classes.MobilePadding}></div>
           </div>
@@ -156,7 +157,7 @@ const Landing = props => {
             <div
               className={classes.LearnMore}
               onClick={() => onLearnMore('/renewable-resources')}>
-              Learn More
+              Learn More →
             </div>
           </div>
         </div>
@@ -165,7 +166,6 @@ const Landing = props => {
           <img src={WindEnergy} alt='Wind Energy' />
         </div>
       </section>
-
       <ContactUs></ContactUs>
     </div>
   );

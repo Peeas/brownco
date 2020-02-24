@@ -9,6 +9,7 @@ import NewJobPost from './NewJobPost/NewJobPost';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
+import HeroCareers from '../../assets/images/hero-careers.jpg';
 
 class Careers extends Component {
   state = {
@@ -106,7 +107,7 @@ class Careers extends Component {
     }
     return (
       <div className={classes.CarrersContainerpage}>
-        <Meta title={'Careers | Brownco Construction'} description={"It's not easy work but it is rewarding. We are growing and looking for hardworking team players with grit! Submit a resume at Brownco Construction Co. Inc.’s website."} />
+        <Meta title={'Careers | Brownco Construction Co., Inc.'} description={"It's not easy work but it is rewarding. We are growing and looking for hardworking team players with grit! Submit a resume at Brownco Construction Co. Inc.’s website."} keywords={'Careers, Jobs, Openings, Work'} />
         <ResponsiveDialog
           isOpen={this.state.showPost === true}
           onClose={this.toggleClose}>
@@ -119,7 +120,9 @@ class Careers extends Component {
         <div className={classes.CareersContainer}>
           <Hero
             bgImageAlt={'Careers at Brownco'}
-            heroText={'Available Positions'} />
+            heroText={'Available Positions'}
+            heroImage={HeroCareers}
+             />
 
           {this.state.loading ? (
             <div className={classes.Spinner}>

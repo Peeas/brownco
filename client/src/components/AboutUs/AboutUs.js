@@ -2,13 +2,14 @@ import React from 'react';
 import classes from './AboutUs.module.css';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutUsFootImg from '../../assets/images/hero-about-us.jpg';
+import AboutUsImg from '../../assets/images/img-about-us.jpg';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
 const AboutUs = () => {
   window.scrollTo(0, 0);
   return (
     <div className={classes.AboutUsContainer}>
-      <Meta title={'About Us | Brownco'} description={"Think Safety Work Safely, The Brownco Way. Building with Purpose."} />
+      <Meta title={'About Us | Brownco Construction'} description={"Think safety work safely, the Brownco Construction Way. Building with Purpose."} keywords={'About, Safety, Policy'} />
       <Hero
         bgImageAlt={'About Us'}
         heroImage={AboutUsFootImg}
@@ -18,7 +19,7 @@ const AboutUs = () => {
       <section className={classes.ContextContainer}>
         <div className={classes.Context}>
         <p>
-          "Building with Purpose" is Brownco Construction Company Inc's pledge.
+          "Building with Purpose" is Brownco Construction Company, Inc's pledge.
           A family owned and operated business since 1953, Brownco performs new,
           specialized and maintenance construction for commercial and industrial
           facilities. As a self-performing contractor Brownco offers competitive
@@ -56,23 +57,19 @@ const AboutUs = () => {
             California Contractors State License Number: 769921 <br />
             Classifications: A, B, C8, C16, C21, C36, C51, C61, D42 <br />
             Certifications: HAZ <br />
-            
           </div>
 
           <div className={classes.ThirdSub2}>
             <p>Arizona Registrar of Contractors Number: 165171 B-01</p>
-
             <p>
               Colorado Division of Professions and Occupations Number:
               20021003711
             </p>
-
             <p>Washington Department of Labor Number: 602078929</p>
-
             <p>Certified Wind Turbine installer</p>
           </div>
           <div className={classes.FootImgContainer}>
-            <img src={AboutUsFootImg} alt='about-us' />
+            <img src={AboutUsImg} alt='Brownco Construction Safety Meeting' />
           </div>
 
           <div className={classes.SafetyPolicy}>

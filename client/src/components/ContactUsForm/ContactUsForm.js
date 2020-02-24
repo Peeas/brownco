@@ -10,6 +10,7 @@ import axios from 'axios';
 import ResponsiveDialog from '../UI/ResponsiveDialog/ResponsiveDialog';
 import Hero from '../UI/Hero/Hero';
 import Meta from '../Meta/Meta';
+import contactImage from '../../assets/images/hero-contact.jpg';
 
 class ContactUsForm extends Component {
   constructor(props) {
@@ -90,10 +91,11 @@ class ContactUsForm extends Component {
     return (
       <div className={classes.ContactUsContainer}>
         <Meta
-          title={'Contact | Brownco'}
+          title={'Contact | Brownco Construction Co., Inc.'}
           description={
-            'Building Damage? No problem call Brownco Construction Company, Inc. for your emergency construction needs.'
+            'Building Damage? No problem contact Brownco Construction Company, Inc. for your emergency construction needs.'
           }
+          keywords={'Contact'}
         />
         <ResponsiveDialog
           isOpen={
@@ -104,8 +106,9 @@ class ContactUsForm extends Component {
           {notification}
         </ResponsiveDialog>
         <Hero
-          bgImageAlt={'contact-us-bg-image-brownco'}
+          bgImageAlt={'Contact Us'}
           heroText={'Contact Us'}
+          heroImage={contactImage}
         />
 
         <div className={classes.ContactUsForm}>

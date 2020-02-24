@@ -12,10 +12,11 @@ const DemolitionExcavation = () => {
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
         <Meta
-          title={'Demolition and Excavation | Brownco'}
+          title={'Demolition and Excavation | Brownco Construction Co., Inc.'}
           description={
             "Brownco loves to tear buildings up, call today for your demolition and excavation proposal."
           }
+          keywords={'Demolition, Excavation, Anaheim'}
         />
         <Hero
           bgImageAlt={'demolition-excavation-bg-image-brownco'}

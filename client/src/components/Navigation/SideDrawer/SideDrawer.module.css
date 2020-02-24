@@ -1,5 +1,6 @@
 .SideDrawer {
     position: fixed;
+    font-family: Rubik;
     width: 280px;
     max-width: 70%;
     height: 100%;

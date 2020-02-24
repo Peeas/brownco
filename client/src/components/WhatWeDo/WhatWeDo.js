@@ -16,10 +16,11 @@ const WhatWeDo = () => {
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
         <Meta
-          title={'Structural Steel | Brownco'}
+          title={'Structural Steel | Brownco Construction Co., Inc.'}
           description={
             'Brownco Construction Company, Inc. fabricated and installed employee protection guardrail. Need guardrails, safety bollards, ADA compliance?'
           }
+          keywords={'Concrete, Construction, Demolition, Excavation, Construction, Structural Steel, Tenant Improvement, Renewable Energy, Renewable Resources, Anaheim'}
         />
         <Hero
           bgImageAlt={'Structural Steel'}
