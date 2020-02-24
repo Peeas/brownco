@@ -197,7 +197,7 @@ class Projects extends Component {
                 projectPage={this.state.page !== null}
                 onEditPage={() => this.onLaunchAddPage(true)}
                 authenticated={this.context.authenticated}
-                bgImageAlt={'projects-bg-image-brownco'}
+                bgImageAlt={'Brownco Construction Co., Inc. Projects'}
                 heroImage={this.state.heroImage}
                 heroText={this.state.title}
               />

@@ -106,7 +106,7 @@
 .Orangebar {
     height: 4px;
     width: 40px;
-    background-color: #F86800;
+    background-color: #FF4504;
 }
 
 .SectionHeader {
@@ -125,16 +125,15 @@
 
 .LearnMore {
     height: 14px;
-    width: 86px;
     color: #FF4504;
-    font-family: Rubik;
     font-weight: 500;
     margin-top: 20px;
     cursor: pointer;
 }
 
-LearnMore:hover {
-    color: black;
+.LearnMore:hover {
+    color: #D13600;
+    font-weight: 700;
 }
 
 @media(min-width: 700px) {

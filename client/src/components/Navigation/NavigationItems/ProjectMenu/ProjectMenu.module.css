@@ -16,12 +16,12 @@
     text-transform: uppercase;
 }
 .Whatwedo:hover {
-    color: #F86800;
+    color: #FF4504;
     transition-timing-function: ease;
     transition: .5s;
 }
 span:hover {
-    color: #F86800;
+    color: #FF4504;
     transition-timing-function: ease;
     transition: .5s;
 }

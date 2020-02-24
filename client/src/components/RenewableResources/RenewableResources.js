@@ -19,10 +19,11 @@ const RenewableResources = () => {
     <Fragment>
       <div className={classes.WhatWeDoContainer}>
         <Meta
-          title={'Renewable Energy | Brownco'}
+          title={'Renewable Energy | Brownco Construction Co., Inc.'}
           description={
             "For over 20 years Brownco has been providing renewable energy solutions for clients. Wanna talk about it, we are green to consult with you today!"
           }
+          keywords={'Construction, Renewable Energy, Renewable Resources, Anaheim'}
         />
         <Hero
           bgImageAlt={'Renewable Resources'}

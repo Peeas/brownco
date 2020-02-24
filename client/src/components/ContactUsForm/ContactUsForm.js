@@ -91,10 +91,11 @@ class ContactUsForm extends Component {
     return (
       <div className={classes.ContactUsContainer}>
         <Meta
-          title={'Contact | Brownco Construction'}
+          title={'Contact | Brownco Construction Co., Inc.'}
           description={
-            'Building Damage? No problem call Brownco Construction Company, Inc. for your emergency construction needs.'
+            'Building Damage? No problem contact Brownco Construction Company, Inc. for your emergency construction needs.'
           }
+          keywords={'Contact'}
         />
         <ResponsiveDialog
           isOpen={
