@@ -78,7 +78,8 @@ class AddPage extends Component {
         this.setState({loading: false})
         return;
       }
-      page.append('name', this.state.pageForm.name);
+      let name = this.state.pageForm.name.toLowerCase().trim();
+      page.append('name', name);
       page.append('metaTitle', this.state.pageForm.metaTitle);
       page.append('metaDescription', this.state.pageForm.metaDescription);
 
@@ -102,9 +103,18 @@ class AddPage extends Component {
         this.setState({loading: false})
         if (!this.state.isEdit) {
           alert('Page added Successfully!');
-          this.props.history.push(`/projects/${res.data._id}`);
+          let name = res.data.name.split(' ').join('-').toLowerCase();
+          this.props.history.push({
+            pathname: `/projects/${name}`,
+            state: { detail: res.data._id}
+          });
         } else {
           alert('Page updated Successfully!');
+          let name = res.data.name.split(' ').join('-').toLowerCase();
+          this.props.history.push({
+            pathname: `/projects/${name}`,
+            state: { detail: res.data._id}
+          });
         }
         this.props.toggleClose();
       }

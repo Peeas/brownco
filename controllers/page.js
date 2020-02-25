@@ -15,6 +15,7 @@ const s3 = new aws.S3();
 
 exports.getPages = async(req, res, next) => {
     Page.find()
+        .populate('projects')
         .sort({
             date: -1
         })
@@ -68,7 +69,6 @@ exports.postPage = async(req, res, next) => {
 exports.editPage = async(req, res, next) => {
     const { name, metaTitle, metaDescription} = req.body;
     const image = req.file;
-    console.log('IMAGE',image)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({errors: errors.array()})

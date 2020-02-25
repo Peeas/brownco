@@ -6,6 +6,7 @@ const PageSchema = new Schema({
     name: {
         type: String,
         required: true,
+        unique: true,
     },
     file: {
         type: String, 
@@ -14,11 +15,9 @@ const PageSchema = new Schema({
     meta: {
         title: {
             type: String, 
-            required: true
         },
         description: {
             type: String, 
-            required: true
         },
     },
     projects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
