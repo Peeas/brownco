@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   },
   nested: {
     paddingLeft: theme.spacing(4)
+  },
+  transform: {
+    textTransform: 'capitalize'
   }
 }));
 
@@ -39,7 +42,11 @@ const NestedList = props => {
   
   const handleProjNav = page => {
     if (page && page._id && page._id !== undefined) {
-      props.history.push(`/projects/${page._id}`);
+      let name = page.name.split(' ').join('-').toLowerCase();
+      props.history.push({
+        pathname: `/projects/${name}`,
+        state: { detail: page._id}
+      });
     }
   };
   const handleProjClick = () => {
@@ -118,7 +125,7 @@ const NestedList = props => {
                   onClick={() => handleProjNav(page)}
                   button
                   className={classes.nested}>
-                  <ListItemText primary={page.name} />
+                  <ListItemText className={classes.transform} primary={page.name} />
                 </ListItem>
               ))}
 

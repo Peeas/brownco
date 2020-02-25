@@ -78,7 +78,9 @@ class App extends Component {
     let routes = (
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/projects/:id" exact component={Projects} />
+        <Route path="/projects/:id" exact component={() => (
+          <Projects pages={this.state.pages}/>
+        )} />
         <Route path="/aboutus" exact component={AboutUs} />
         <Route path="/structural-steel" exact component={WhatWeDo} />
         <Route path="/concrete-construction" exact component={ConcreteConstruction} />

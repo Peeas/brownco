@@ -24,7 +24,8 @@ class Projects extends Component {
     title: 'Projects',
     heroImage: null,
     id: null,
-    pageEdit: false
+    pageEdit: false,
+    pageName: null
   };
 
   static contextType = authContext;
@@ -33,57 +34,73 @@ class Projects extends Component {
     this.init();
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.match.params.id !== state.id) {
-      return { id: props.match.params.id };
+  static getDerivedStateFromProps(props, state) {    
+    if (props.match.params.id !== state.pageName) {
+      return { pageName: props.match.params.id };
     } else {
       return null;
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.match.params.id !== this.state.id) {
+    if (prevProps.match.params.id !== this.state.pageName) {
       this.init();
     }
   }
 
   init = () => {
     window.scrollTo(0, 0);
-    const { id } = this.props.match.params;
-    if (id && id !== undefined) {
-      this.setState({ id: id });
-      this.getPage(id);
-    } else {
-      this.props.history.push('/')
-    }
-  };
+    this.getPage();
+  }
 
-  getPage = async id => {
-    this.setState({ loading: true });
-    try {
-      const res = await axios.get(`/api/pages/${id}`, {
-        headers: { 'Content-Type': 'application/json' }
+  getPage = () => {
+    let name = this.props.match.params.id.split('-').join(' ');
+    let pages = this.props.pages.slice();
+    let page = pages.find(p => {
+      return p.name.toLowerCase() === name;
+    });
+  
+    if (page && page !== undefined) {
+      this.setState({
+        page: page,
+        id: page._id,
+        projects: page.projects,
+        title: page.name,
+        heroImage: page.file,
+        pageName: this.props.match.params.id,
+        loading: false
       });
-      if (res && res.status === 200) {
-        this.setState({
-          page: res.data,
-          projects: res.data.projects,
-          title: res.data.name,
-          heroImage: res.data.file
-        });
-        this.setState({ loading: false });
-      }
-    } catch (err) {
-      console.error(err);
-      this.setState({ loading: false });
     }
-  };
+  }
+
+  // OLD GET PAGE FROM SERVER
+  // getPage = async id => {
+  //   this.setState({ loading: true });
+  //   try {
+  //     const res = await axios.get(`/api/pages/${id}`, {
+  //       headers: { 'Content-Type': 'application/json' }
+  //     });
+  //     if (res && res.status === 200) {
+  //       this.setState({
+  //         page: res.data,
+  //         projects: res.data.projects,
+  //         title: res.data.name,
+  //         heroImage: res.data.file
+  //       });
+  //       this.setState({ loading: false });
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     this.setState({ loading: false });
+  //   }
+  // };
 
   toggleClose = () => {
     this.setState({
       editMode: false,
       showEditModal: !this.state.showEditModal
     });
+    this.context.getPages();
     this.init();
   };
 
@@ -112,6 +129,7 @@ class Projects extends Component {
       );
       if (res && res.status === 200) {
         alert('Project successfully removed');
+        this.context.getPages();
         this.init();
       }
     } catch (err) {
@@ -119,17 +137,27 @@ class Projects extends Component {
       console.error('error: ', err);
     }
   };
+
+  onLaunchAddProject = () => {
+    this.setState({
+      editMode: false,
+      showEditModal: !this.state.showEditModal
+    })
+  }
+
   onLaunchAddPage = bool => {
     this.setState({
       pageEdit: bool,
       showAddPage: true
     });
   };
+
   onClosePage = () => {
     this.context.getPages();
     this.init();
     this.setState({ showAddPage: false });
   };
+
   onDeletePage = () => {
     this.state.projects.forEach(project => {
       this.onDeleteProject(project._id);
@@ -216,7 +244,7 @@ class Projects extends Component {
               {this.context.authenticated ? (
                 <div className={classes.AddProjectContainer}>
                   {this.state.page !== null ? (
-                    <Button onClick={this.toggleClose} color='primary'>
+                    <Button onClick={this.onLaunchAddProject} color='primary'>
                       + Add Project Row
                     </Button>
                   ) : (

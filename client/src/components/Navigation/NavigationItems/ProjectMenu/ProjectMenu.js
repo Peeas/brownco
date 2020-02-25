@@ -14,7 +14,11 @@ const ProjectMenu = props => {
   const handleClose = (event, page) => {
     setAnchorEl(null);
     if (page && page._id && page._id !== undefined) {
-      props.history.push(`/projects/${page._id}`)
+      let name = page.name.split(' ').join('-').toLowerCase();
+      props.history.push({
+        pathname: `/projects/${name}`,
+        state: { detail: page._id}
+      })
     }
   }
 
@@ -32,7 +36,7 @@ const ProjectMenu = props => {
             {props.pages.map(page => (
                 <MenuItem
                     key={page._id}
-                    onClick={(event) => handleClose(event, page)}><span>{page.name}</span></MenuItem>
+                    onClick={(event) => handleClose(event, page)}><span className={classes.transform}>{page.name}</span></MenuItem>
             ))}
       </Menu>
     </div>
