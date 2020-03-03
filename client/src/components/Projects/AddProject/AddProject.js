@@ -84,6 +84,11 @@ class AddProject extends Component {
       ) {
         project.append('image', this.state.addProjectForm.image);
       }
+      if (this.state.addProjectForm.title === '' || this.state.addProjectForm.description === '') {
+        alert('Title and Description are required');
+        this.setState({ loading: false });
+        return;
+      }
       if (!this.state.isEdit && this.state.addProjectForm.image === '') {
         alert('please add an image');
         this.setState({ loading: false });
