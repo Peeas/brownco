@@ -1,6 +1,9 @@
 {
   "name": "brownco",
   "version": "1.0.0",
+  "engines": {
+    "node": "11.13.0"
+  },
   "description": "brownco cms api",
   "main": "server.js",
   "scripts": {
