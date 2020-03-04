@@ -79,6 +79,11 @@ class AddPage extends Component {
         return;
       }
       let name = this.state.pageForm.name.toLowerCase().trim();
+      if (name === '') {
+        alert('Title is required');
+        this.setState({loading: false});
+        return;
+      }
       page.append('name', name);
       page.append('metaTitle', this.state.pageForm.metaTitle);
       page.append('metaDescription', this.state.pageForm.metaDescription);
