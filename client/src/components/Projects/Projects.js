@@ -54,10 +54,10 @@ class Projects extends Component {
   }
 
   getPage = () => {
-    let name = this.props.match.params.id.split('-').join(' ');
+    let pageId = this.props.location.state.detail;
     let pages = this.props.pages.slice();
     let page = pages.find(p => {
-      return p.name.toLowerCase() === name;
+      return p._id === pageId;
     });
   
     if (page && page !== undefined) {
